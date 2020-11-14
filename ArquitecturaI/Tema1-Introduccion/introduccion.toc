@@ -1,0 +1,3 @@
+\select@language {spanish}
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}n a los computadores}{3}{0}{1}
+\beamer@sectionintoc {2}{Estructura y funci\IeC {\'o}n}{13}{0}{2}

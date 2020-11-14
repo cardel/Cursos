@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Microoperaciones}{3}{0}{1}
+\beamer@sectionintoc {2}{Control del procesador}{10}{0}{2}
+\beamer@sectionintoc {3}{Implementaci\IeC {\'o}n cableada}{16}{0}{3}

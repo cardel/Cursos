@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Unidad l\IeC {\'o}gica aritm\IeC {\'e}tica (ALU)}{3}{0}{1}
+\beamer@sectionintoc {2}{Representaci\IeC {\'o}n de enteros}{6}{0}{2}
+\beamer@sectionintoc {3}{Aritm\IeC {\'e}tica con enteros}{24}{0}{3}

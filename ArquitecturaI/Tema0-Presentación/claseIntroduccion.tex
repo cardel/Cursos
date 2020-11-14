@@ -1,0 +1,144 @@
+%@AUTHOR: Cardel
+%Configuracion del documento
+
+\documentclass{beamer}
+\usetheme{Rochester}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{ragged2e}
+\usepackage{colortbl}
+\usepackage{color}
+\definecolor{naranja}{rgb}{1,0.5,0} % valores de las componentes roja, verde y azul (RGB)
+\definecolor{rojo}{rgb}{1,0,0}
+\definecolor{SteelBlue}{rgb}{0.3,0.5,0.7}
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage{float}
+\usepackage{amsmath, amsthm, amssymb}
+\lstset{ %
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=none,
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                   % show the filename of files included with \lstinputlisting;{}
+  extendedchars=false,
+  inputencoding=utf8, 
+}
+
+\author{Carlos Andr\'es Delgado S.} 
+\title{Arquitectura de computadores I}
+\subtitle{Presentación del curso \\ carlos.andres.delgado@correounivalle.edu.co}
+\institute{Facultad de Ingeniería. Universidad del Valle}
+%Transparencia
+\setbeamercovered{transparent}
+
+%LOGO Univalle
+\pgfdeclareimage[height=1.4cm]{logo}{imagenes/univalle}
+\logo{\pgfuseimage{logo}}
+
+%Para que en cada seccion aparezca la tabla de contenido
+\AtBeginSection[]{
+	\begin{frame}
+	\frametitle{Contenido}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+
+\date{Agosto de 2017}
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+\begin{document}
+
+	\begin{frame}
+		\titlepage	 		
+	\end{frame}
+	\begin{frame}
+ 		\frametitle{Contenido}
+		\tableofcontents
+	\end{frame}
+	
+
+	\section{Reglas}
+	\begin{frame}
+		\frametitle{El curso}
+		\begin{itemize}
+			\item Toda comunicación del docente será por el campus virtual. Recomiendo enlace el correo institucional a su cuenta, para que le lleguen los mensajes.
+			\item Existe una bitácora en el campus virtual, que puede consultar para saber en que tema va el curso.
+			\item El contacto del estudiante con el docente, será a través de correo electrónico.
+			\item Si considera que el correo no es lo ideal para su pregunta, podemos organizar una videollamada.
+		\end{itemize}
+	\end{frame}	
+	
+	\begin{frame}
+		\frametitle{Sobre el correo electrónico}
+		\begin{itemize}
+			\item El tiempo de respuesta depende de la disponibilidad del docente, se hará lo más rápido posible, pero puede tardar en algunos casos, como los fines de semana o en horas de la noche.
+			\item Al escribirme, es importante me indiquen de que curso son, para darle la asesoría apropiada.
+			\item Se atenderán dudas de asignaciones (entrega, quices, parciales, etc) hasta 48 horas antes de su realización
+			\item Comprendo que desean los resultados de las evaluaciones lo más rápido posible y me comprometo a ello, pero no contestaré correos presionando por estas.
+			\item Pueden preguntar lo que quieran. Sin embargo, los invito que antes de preguntar, se intente solucionar el problema, para aprovechar la asesoría docente al máximo.
+		\end{itemize}
+	\end{frame}	
+
+	\begin{frame}
+		\frametitle{Sobre las entregas}
+		\begin{itemize}
+			\item Las entregas se realizarán por el campus virtual. En el caso de los quices será en la clase.
+			\item El enlace del campus virtual tiene una hora de cierre fija. Sin embargo, puede entregar un poco más tarde (el enlace lo permitirá hasta 2 horas después del cierre) con una penalización de acuerdo al tiempo de entrega tardía.
+			\item El curso tiene acceso de invitados (entrada sin sesión), por lo que debe tener cuidado no se le cierre la sesión.
+			\item Si el campus falla, esperar a que se arregle para enviar su entrega. Avisarme por correo de la falla.
+			\item En ningún caso, aceptaré entregas por correo electrónico.
+		\end{itemize}
+	\end{frame}	
+
+	\section{Conocimientos previos}	
+
+	\begin{frame}
+		\frametitle{Conocimientos previos}
+		\begin{block}{General}
+			\begin{itemize}
+				\item Manejo básico de un computador
+				\item Entendimiento básico de las partes de un computador
+				\item Matemática fundamental
+				\item Entendimiento de gráficas
+			\end{itemize}
+		\end{block}
+	\end{frame}	
+		
+		
+	\section{Herramientas}
+	\begin{frame}
+		\frametitle{Herramientas}
+		\begin{block}{Del libro}
+		Este curso está inspirado en el libro \textit{Organización y Arquitectura de
+Computadores} de William Stallings, el autor provee algunos recursos  en:
+		\begin{itemize}
+			\item Del libro en:  \url{http://williamstallings.com/ComputerOrganization/}
+			\item De diferentes temas ciencias de la computación \url{http://www.computersciencestudent.com/}
+		\end{itemize}
+		\end{block}
+	\end{frame}		
+	\begin{frame}
+		\frametitle{Herramientas}
+		\begin{block}{Externos}
+		Material adicional disponible en:
+		\begin{itemize}
+			\item Páginas de manufactureras de Hardware
+			\item CPU Info center
+			\item Comité técnico de IEEE
+			\item Grupo de intereses de ACM
+		\end{itemize}
+		\end{block}
+	\end{frame}		
+	
+\begin{frame}
+	\frametitle{¿Preguntas?}
+	\centering
+	Próximo tema: \\Introducción
+\end{frame}					
+			
+
+\end{document}

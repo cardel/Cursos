@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Representaci\IeC {\'o}n en punto flotante}{3}{0}{1}
+\beamer@sectionintoc {2}{Est\IeC {\'a}ndar del IEEE para punto flotante}{18}{0}{2}
+\beamer@sectionintoc {3}{Aritm\IeC {\'e}tica en punto flotante}{38}{0}{3}

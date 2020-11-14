@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Caracter\IeC {\'\i }sticas y funciones}{3}{0}{1}
+\beamer@sectionintoc {2}{Modos de direccionamiento}{18}{0}{2}
+\beamer@sectionintoc {3}{Lenguaje ensamblador}{32}{0}{3}
+\beamer@subsectionintoc {3}{1}{Modelo procesador 8086/8088}{33}{0}{3}
+\beamer@subsectionintoc {3}{2}{Generalidades}{46}{0}{3}
+\beamer@subsectionintoc {3}{3}{Direccionamiento en ensamblador}{52}{0}{3}
+\beamer@subsectionintoc {3}{4}{Juegos de instrucciones}{64}{0}{3}
+\beamer@subsectionintoc {3}{5}{Etiquetas, comentarios y directivas}{74}{0}{3}

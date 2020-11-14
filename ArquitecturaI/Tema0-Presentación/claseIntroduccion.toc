@@ -1,0 +1,4 @@
+\select@language {spanish}
+\beamer@sectionintoc {1}{Reglas}{3}{0}{1}
+\beamer@sectionintoc {2}{Conocimientos previos}{7}{0}{2}
+\beamer@sectionintoc {3}{Herramientas}{9}{0}{3}

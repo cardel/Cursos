@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Conceptos b\IeC {\'a}sicos}{3}{0}{1}
+\beamer@sectionintoc {2}{Secuenciamiento de microinstrucciones}{13}{0}{2}
+\beamer@sectionintoc {3}{Ejecuci\IeC {\'o}n de microinstrucciones}{22}{0}{3}
+\beamer@sectionintoc {4}{Extra: BIOS}{29}{0}{4}

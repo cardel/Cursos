@@ -1,0 +1,15 @@
+\frametitle{Lenguaje ensamblador}
+\begin{center}
+\begin{lstlisting}
+.MODEL SMALL
+.STACK 100H
+.DATA
+    max EQU 100
+    cad DB max DUP ?
+    dac DB max DUP ?
+.CODE
+    MOV AX, @DATA
+    MOV DS, AX
+ END
+\end{lstlisting}
+\end{center}
