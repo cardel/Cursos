@@ -1,4 +1,4 @@
-archive: calorias.zip
+archive: encuesta.zip
 test_cases:
 - batched:
   - {in: prueba1.in, out: prueba1.out}
