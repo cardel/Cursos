@@ -1,0 +1,15 @@
+archive: perfecto.zip
+test_cases:
+- batched:
+  - {in: prueba1.in, out: prueba1.out}
+  points: 5
+- batched:
+  - {in: prueba2.in, out: prueba2.out}
+  points: 5
+- batched:
+  - {in: prueba3.in, out: prueba3.out}
+  - {in: prueba4.in, out: prueba4.out}
+  points: 10
+- batched:
+  - {in: prueba5.in, out: prueba5.out}
+  points: 5
