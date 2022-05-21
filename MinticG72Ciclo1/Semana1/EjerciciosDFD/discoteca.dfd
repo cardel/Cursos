@@ -1,0 +1,40 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+4
+1
+44
+'Bienvenido a la discoteca el hombre muerto'
+4
+1
+27
+'Por favor indique su edad'
+6
+1
+4
+edad
+1
+0
+5
+1
+4
+edad
+7
+0
+1
+10
+edad >= 18
+4
+1
+37
+'No puede entrar, espere a ser legal'
+13
+4
+1
+14
+'Puede entrar'
+13
+1
