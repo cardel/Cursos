@@ -8,22 +8,20 @@ def AutoPartes(ventas):
     salida = {} #Construir el diccionario
 
     for idProducto,dProducto,pnProducto,cvProducto,sProducto,nComprador,cComprador,fVenta in ventas:
-        #Lógica de insertar en el diccionario en la llave id producto una lista con los demás datos como lo piden en el enunciado
-        print(idProducto,dProducto,pnProducto) #Eliminar
-        pass #eliminar
-        #Aqui usted debe seguir el ejemplo de cosmeticos        
+        #completar
+        pass #borrar
+  
 
     return salida
 
 def consultaRegistro(ventas,id_producto):
-    registro = AutoPartes(ventas)
 
-    if(registro.get(id_producto)==None):
-        return "No hay registro de venta de ese producto" 
+    if(ventas.get(id_producto)==None):
+        print("No hay registro de venta de ese producto")
     else:
-        listaVentas = registro[id_producto]
-        for idProducto, dProducto,pnProducto,cvProducto,sProducto,nComprador,cComprador,fVenta in listaVentas:
-            salida = f"Producto consultado : {idProducto} Descripción {dProducto} #Parte {pnProducto} Cantidad vendida {cvProducto} Stock {sProducto} Comprador {nComprador} Documento {cComprador} Fecha Venta {fVenta}"
+        listaVentas = ventas[id_producto]
+        for dProducto,pnProducto,cvProducto,sProducto,nComprador,cComprador,fVenta in listaVentas:
+            salida = f"Producto consultado : {id_producto}  Descripción  {dProducto}  #Parte  {pnProducto}  Cantidad vendida  {cvProducto}  Stock  {sProducto}  Comprador {nComprador}  Documento  {cComprador}  Fecha Venta  {fVenta}"
             print(salida) #Aqui si va con print
 
 #No copiar esto cuando lo manden
@@ -35,4 +33,4 @@ ejemplo = [
     (9251,'piñón', 'EN5698',2,8,'Juan Peña',565,'12/06/2020')
 ]
 
-print(consultaRegistro(ejemplo,2010))
+consultaRegistro(AutoPartes(ejemplo),2010)
