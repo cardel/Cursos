@@ -13,12 +13,12 @@ def ordenes(rutinaContable):
         ventas = orden[1:] #Extraigo las ventas que están la posición 1 en adelante (slices)
         #Sumar los totales ustedes necesitan un reduce
         #Debe reemplazar el 0 en la linea 16 con la operación
-        pesos = reduce(lambda acc,x: 0 ,ventas,0) #x viene siendo una tupla por ejemplo ("5464", 4, 25842.99)
+        pesos = reduce(lambda acc,x: 0,ventas,0) #x viene siendo una tupla por ejemplo ("5464", 4, 25842.99)
         #de x deben extraer el total (que está en la posición 1) y multiplicarlo por el valor que (posicion 2) y todoesto 
         # sumarlo al acumulador
         if pesos < 600000:
             pesos += 25000
-        print(f"La factura {factura} tiene un total en pesos de {'{:,.2f}'.format(pesos,2)}")
+        print(f"La factura {factura} tiene un total en pesos de {'{:,.2f}'.format(pesos)}")
     print('-------------------------- Fin Registro diario ----------------------------------')
 #Ejemplos
 
