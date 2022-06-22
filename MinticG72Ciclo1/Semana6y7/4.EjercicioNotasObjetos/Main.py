@@ -18,3 +18,20 @@ objMateria1 = Materia(
 print(objMateria1.getInformacion())
 print(objMateria1.promedio5())
 print(objMateria1.promedio100())
+print(objMateria1.getAprobo())
+print(objMateria1.getInformacionNotas())
+
+objMateria2 = Materia(
+    "Fundamentos de programación",
+    1,
+    "Carlos Delgado",
+    [Nota(50),Nota(40),Nota(50),Nota(30),Nota(10)],
+    3,
+    "FDC323"
+)
+
+print(objMateria2.getInformacion())
+print(objMateria2.promedio5())
+print(objMateria2.promedio100())
+print(objMateria2.getAprobo())
+print(objMateria2.getInformacionNotas())

@@ -36,3 +36,6 @@ class Nota:
 
     def getNotaCualitativa(self):
         return self.__notacualitativa
+
+    def getInformacion(self):
+        return f"La nota sobre 5 es {self.__nota5} y la nota sobre 100 es {self.__nota100}"
