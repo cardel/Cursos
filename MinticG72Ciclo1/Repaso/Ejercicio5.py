@@ -26,5 +26,13 @@ def mayor_vendido(lista_ventas):
     
     return (idmax,elmmax)
 
+
+
+def mayor_vendido_id(lista_ventas, lds):
+    listaF = list(filter(lambda x: x[0] in lds,lista_ventas))
+    return mayor_vendido(listaF)
+
 print(mayor_vendido([(1, 10), (1, 20), (2, 30) ,(2, 10) ,(3, 10) ,(4, 10), (5 ,20)]))
 #(2 40)
+print(mayor_vendido_id([(1, 10), (1, 20), (2, 30) ,(2, 10) ,(3, 10) ,(4, 10), (5 ,20)],[1,4,5]))
+#(1 30)
