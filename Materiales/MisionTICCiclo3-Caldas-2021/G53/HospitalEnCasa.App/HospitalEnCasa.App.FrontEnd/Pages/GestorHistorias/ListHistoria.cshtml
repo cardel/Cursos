@@ -1,0 +1,22 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.ListHistoriaModel
+@{
+}
+<h1>Gestor de historias</h1>
+<p class="text-success">A continuación puede ver la lista de historias</p>
+<table class="table table-dark">
+    <tr>
+        <th>Paciente</th>
+        <th>Serial</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+    </tr>
+    @foreach (var historia in @Model.Historias){
+        <tr>
+            <td>@historia.anotaciones[0].paciente.nombre</td>
+            <td>@historia.serial</td>
+            <td>@historia.descripcion</td>
+            <td><a class="btn btn-primary" asp-page="./DetailHistoria" asp-route-idHistoria=@historia.Id>Ver detalle</a></td>
+        </tr>
+    }
+</table>

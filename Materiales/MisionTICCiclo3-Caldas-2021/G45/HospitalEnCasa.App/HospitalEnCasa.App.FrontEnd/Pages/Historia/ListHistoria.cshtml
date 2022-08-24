@@ -1,0 +1,31 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.ListHistoriaModel
+@{
+}
+<h1>Gestión de historias clinicas</h1>
+<p>Seleccione la opción que desea consultar</p>
+<form method="get" asp-page="./DetailHistoria" class="mt-3">
+    <input type=hidden asp-for="tipo" value="paciente">
+    <div class="form-group">        
+        <label asp-for="cedula" class="control-label">Historia por paciente</label>
+        <select asp-for="cedula" class="form-control" asp-items=@Model.pacientes></select>
+    </div>  
+    <button type="submit" class="btn btn-primary">Consultar</button>  
+</form>
+<form method="get" asp-page="./DetailHistoria" class="mt-3">
+    <input type=hidden asp-for="tipo" value="medico">
+    <div class="form-group">        
+        <label asp-for="cedula" class="control-label">Historia por Medico</label>
+        <select asp-for="cedula" class="form-control" asp-items=@Model.medicos></select>
+    </div>  
+    <button type="submit" class="btn btn-primary">Consultar</button>  
+</form>
+<form method="get" asp-page="./DetailHistoria" class="mt-3">
+    <input type=hidden asp-for="tipo" value="enfermera">
+    <div class="form-group">        
+        <label asp-for="cedula" class="control-label">Historia por Enfermera</label>
+        <select asp-for="cedula" class="form-control" asp-items=@Model.enfermeras></select>
+    </div>  
+    <button type="submit" class="btn btn-primary">Consultar</button>  
+</form>
+

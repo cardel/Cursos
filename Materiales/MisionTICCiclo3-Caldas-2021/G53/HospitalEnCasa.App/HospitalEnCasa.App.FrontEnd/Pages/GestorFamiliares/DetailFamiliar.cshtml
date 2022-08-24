@@ -1,0 +1,13 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.DetailFamiliarModel
+@{
+}
+<h1>Detalle Familiar @Model.familiar.nombre</h1>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action list-group-item-light">Cedula: @Model.familiar.cedula</li>
+    <li class="list-group-item list-group-item-action list-group-item-light">Nombre: @Model.familiar.nombre</li>
+    <li class="list-group-item list-group-item-action list-group-item-light">Edad: @Model.familiar.edad</li>
+    <li class="list-group-item list-group-item-action list-group-item-light">Dirección: @Model.familiar.direccion</li>
+    <li class="list-group-item list-group-item-action list-group-item-light">Latitud: @Model.familiar.latitud</li>
+    <li class="list-group-item list-group-item-action list-group-item-light">Longitud: @Model.familiar.longitud</li>
+</ul>

@@ -1,0 +1,40 @@
+#lang eopl
+(define vacio
+  (lambda()
+    (lambda(s)
+      (cond
+        [(= s 0)'vacio]
+        [else "error"]))))
+ 
+(define reg
+  (lambda(key value old)
+    (lambda(s)
+      (cond
+        [(= s 0)'reg]
+        [(= s 1)key]
+        [(= s 2)value]
+        [(= s 3)old]
+        [else "error"]))))
+ 
+(define vacio?
+  (lambda(reg)
+    (eqv? (reg 0) 'vacio)))
+ 
+(define reg?
+  (lambda(reg)
+    (eqv? (reg 0) 'reg)))
+ 
+(define reg->key
+  (lambda(reg)
+    (reg 1)))
+ 
+(define reg->value
+  (lambda(reg)
+    (reg 2)))
+ 
+(define reg->rest
+  (lambda(reg)
+    (reg 3)))
+ 
+ (define reg1
+  (reg 1 1(reg 3 4(reg 4 5(vacio))))) 

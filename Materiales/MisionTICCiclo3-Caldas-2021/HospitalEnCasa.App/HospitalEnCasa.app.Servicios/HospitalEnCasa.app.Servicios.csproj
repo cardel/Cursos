@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\HospitalEnCasa.app.Persistencia\HospitalEnCasa.app.Persistencia.csproj" />
+    <ProjectReference Include="..\HospitalEnCasa.app.Dominio\HospitalEnCasa.app.Dominio.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+</Project>

@@ -1,0 +1,45 @@
+#lang eopl
+(define vacio
+  (lambda()
+    (list 'vacio)))
+ 
+(define reg
+  (lambda(key value registro)
+    (list 'reg key value registro)))
+ 
+(define vacio?
+  (lambda(reg)
+    (eqv? (car reg) 'vacio)))
+ 
+(define reg?
+  (lambda(reg)
+    (eqv? (car reg) 'reg)))
+ 
+(define reg->key
+  (lambda(reg)
+    (cadr reg)))
+ 
+(define reg->value
+  (lambda(reg)
+    (caddr reg)))
+ 
+(define reg->rest
+  (lambda(reg)
+    (cadddr reg)))
+ 
+;;Area programador 
+(define reg1
+  (reg 1 1(reg 3 4(reg 4 5 (vacio)))))
+
+
+(define suma-valores
+  (lambda (reg)
+    (cond
+      [(vacio? reg) 0]
+      [(reg? reg)
+       (+
+        (reg->value reg)
+        (suma-valores  (reg->rest reg)))]
+      [else (eopl:error "La estructura no es correcta")])))
+
+(display (suma-valores reg1))

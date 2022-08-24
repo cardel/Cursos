@@ -1,0 +1,12 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.ListHistoriaModel
+@{
+}
+<h1>Gestión de historias clinicas</h1>
+<p>Seleccione la opción que desea consultar</p>
+<ul class="list-group">
+    <li class="list-group-item">Historia por paciente <select asp-for="cedula" asp-items="Model.pacientes" name="testSelect"></select> <a class="btn btn-primary" asp-page="./DetailHistoria" asp-route-cedula="@Model.cedula" asp-route-tipo="paciente">Listar</a></li>
+    <li class="list-group-item">Historia por médico <select asp-for="cedula" asp-items="Model.medicos"></select><a class="btn btn-primary" asp-page="./DetailHistoria" asp-route-cedula="@Model.cedula" asp-route-tipo="medico">Listar</a></li></li>
+    <li class="list-group-item">Historia por enfermera<select asp-for="@Model.cedula" asp-items="Model.enfermeras"></select><a class="btn btn-primary" asp-page="./DetailHistoria" asp-route-cedula="@Model.cedula" asp-route-tipo="enfermera">Listar</a></li></li>
+</ul>
+

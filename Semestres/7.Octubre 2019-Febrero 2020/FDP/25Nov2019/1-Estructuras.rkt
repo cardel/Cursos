@@ -1,0 +1,47 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname 1-Estructuras) (read-case-sensitive #t) (teachpacks ((lib "draw.rkt" "teachpack" "htdp") (lib "guess.rkt" "teachpack" "htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "draw.rkt" "teachpack" "htdp") (lib "guess.rkt" "teachpack" "htdp")) #f)))
+
+(define-struct amigo (nombre edad correo altura telefono))
+
+(define carlos
+  (make-amigo 'Carlos 32 "carlos@gmail.com" 180 30020010055))
+
+(amigo-nombre carlos)
+(amigo-edad carlos)
+(amigo-correo carlos)
+(amigo-altura carlos)
+(amigo-telefono carlos)
+
+;;Diseñar una función que reciba 3 amigos y me retorne el amigo quetiene mayor edad, es de aclarar que todos los amigos tienen edades diferentes
+
+
+;;Autor: Carlos A Delgado
+;;Fecha: 25 de Nov de 2019
+;;Contrato: amigo-mayor-edad: amigo, amigo, amigo -> amigo
+;;Propósito: Esta función recibe 3 amigos y retorna el de mayor edad
+;;Ejemplos:
+;;(define amigoA (make-amigo 'Jose 16 "jose@gmail.com" 150 777777))
+;;(define amigoB (make-amigo 'Victor 26 "victor@hotmail.com" 180 321312))
+;;(define amigoC (make-amigo 'Maria 30 "maria_99@gmail.com" 160 213213))
+;;(define amigoD (make-amigo 'Jair 22 "jair@jair.com" 140 3213213))
+;;(amigo-mayor-edad amigoB amigoD amigoA) -> (make-amigo 'Victor 26 "victor@hotmail.com" 180 321312))
+;;(amigo-mayor-edad amigoA amigoC amigoB) -> (make-amigo 'Maria 30 "maria_99@gmail.com" 160 213213)
+
+(define (amigo-mayor-edad amigo1 amigo2 amigo3)
+  (cond
+    [(and (> (amigo-edad amigo1) (amigo-edad amigo2))
+          (> (amigo-edad amigo1) (amigo-edad amigo3)))
+     amigo1]
+    [(> (amigo-edad amigo2) (amigo-edad amigo3))
+     amigo2]
+    [else amigo3]))
+
+
+(define amigoA (make-amigo 'Jose 16 "jose@gmail.com" 150 777777))
+(define amigoB (make-amigo 'Victor 26 "victor@hotmail.com" 180 321312))
+(define amigoC (make-amigo 'Maria 30 "maria_99@gmail.com" 160 213213))
+(define amigoD (make-amigo 'Jair 22 "jair@jair.com" 140 3213213))
+
+(check-expect (amigo-mayor-edad amigoB amigoD amigoA) (make-amigo 'Victor 26 "victor@hotmail.com" 180 321312))
+(check-expect (amigo-mayor-edad amigoA amigoC amigoB) (make-amigo 'Maria 30 "maria_99@gmail.com" 160 213213))

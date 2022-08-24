@@ -1,0 +1,12 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.RemoveFamiliarModel
+@{
+}
+<h1>Confirmación de eliminación</h1>
+<p>¿Realmente desea eliminar al familiar @Model.familiar.nombre?</p>
+<form method="post" class="mt-3">
+    <input hidden asp-for="familiar.Id">
+    <input hidden asp-for="familiar.cedula">
+     <button type="submit" class="btn btn-primary">Sí</button>
+    <a href="./ListFamiliar" class="btn btn-primary">No</a>   
+</form>

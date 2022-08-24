@@ -1,0 +1,12 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.RemovePacienteModel
+@{
+}
+<h1>Eliminar paciente @Model.paciente.nombre</h1>
+<p>¿Desea eliminar el paciente?</p>
+<form method="post" class="mt-3">
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Sí</button>
+        <a asp-page="./ListPaciente" class="btn btn-primary">No</a>
+    </div>
+</form>

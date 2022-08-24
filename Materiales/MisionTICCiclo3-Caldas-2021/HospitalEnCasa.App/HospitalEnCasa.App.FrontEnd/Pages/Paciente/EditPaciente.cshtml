@@ -1,0 +1,76 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.EditPacienteModel
+@using HospitalEnCasa.app.Dominio
+@{
+}
+<form method="post" class="mt-3">
+    <input hidden asp-for="paciente.Id" />
+    <div class="form-group row">
+        <label asp-for="paciente.cedula" class="col-sm-2">Cédula</label>
+        <input asp-for="paciente.cedula" class="form-control">
+        <span asp-validation-for="paciente.cedula" class="text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="paciente.nombre" class="col-sm-2">Nombre</label>
+        <input asp-for="paciente.nombre" class="form-control">
+        <span asp-validation-for="paciente.nombre" class="text-danger"></span>
+    </div>   
+    <div class="form-group row">
+        <label asp-for="paciente.edad" class="col-sm-2">Edad</label>
+        <input asp-for="paciente.edad" class="form-control">
+        <span asp-validation-for="paciente.edad" class="text-danger"></span>
+    </div>  
+    <div class="form-group row">
+        <label asp-for="paciente.genero" class="col-sm-2">Genero</label>
+        <div class="col-sm-10">
+            <select asp-for="paciente.genero" asp-items="Html.GetEnumSelectList<Genero>()"></select>   
+        </div>
+        <span class="text-danger" asp-validation-for="paciente.genero"></span>
+    </div> 
+    <div class="form-group row">
+        <label asp-for="paciente.direccion" class="col-sm-2">Direccion</label>
+        <input asp-for="paciente.direccion" class="form-control">
+        <span asp-validation-for="paciente.direccion" class="text-danger"></span>
+    </div> 
+    <div class="form-group row">
+        <label asp-for="paciente.latitud" class="col-sm-2">Latitud</label>
+        <input asp-for="paciente.latitud" class="form-control">
+        <span asp-validation-for="paciente.latitud" class="text-danger"></span>
+    </div>  
+    <div class="form-group row">
+        <label asp-for="paciente.longitud" class="col-sm-2">Longitud</label>
+        <input asp-for="paciente.longitud" class="form-control">
+        <span asp-validation-for="paciente.longitud" class="text-danger"></span>
+    </div>  
+    <div class="form-group row">
+        <label asp-for="cedulaMedico" class="col-sm-2">Medico</label>
+        <select asp-for="cedulaMedico" class="col-sm-2" asp-items="Model.medicos"></select>
+    </div>  
+    <div class="form-group row">
+        <label asp-for="cedulaFamiliar" class="col-sm-2">Familiar</label>
+        <select asp-for="cedulaFamiliar" class="col-sm-2" asp-items="Model.familiares"></select>
+    </div>  
+    <div class="form-group row">
+        <label asp-for="cedulaEnfermera" class="col-sm-2">Enfermera</label>
+        <select asp-for="cedulaEnfermera" class="col-sm-2" asp-items="Model.enfermeras"></select>
+    </div>  
+    <div class="form-group row">
+        <label asp-for="paciente.username" class="col-sm-2">Username</label>
+        <input asp-for="paciente.username" class="form-control">
+        <span asp-validation-for="paciente.username" class="text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="paciente.email" class="col-sm-2">Email</label>
+        <input asp-for="paciente.email" class="form-control">
+        <span asp-validation-for="paciente.email" class="text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="paciente.password" class="col-sm-2">Password</label>
+        <input asp-for="paciente.password" class="form-control">
+        <span asp-validation-for="paciente.password" class="text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a asp-page="./ListPaciente" class="btn btn-primary">Cancelar</a>
+    </div>
+</form>

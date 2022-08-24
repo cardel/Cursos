@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NNesdJ14VsG9ckoI9NDCTJX7y3IN/a0RS03O4ehXuaskOt/rpFXiAZSQjZN6vD87mLf3y9mWQX0ULERYJl4u7Q==",
+  "success": true,
+  "projectFilePath": "D:\\mintic\\misionticciclo3\\G45\\MetroDeBogota\\TicketMetro.App\\TicketMetro.App.Dominio\\TicketMetro.App.Dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\carde\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\carde\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

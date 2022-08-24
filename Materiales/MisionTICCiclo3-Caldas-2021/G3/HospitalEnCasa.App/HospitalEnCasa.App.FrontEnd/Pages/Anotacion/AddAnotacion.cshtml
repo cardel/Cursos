@@ -1,0 +1,46 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.AddAnotacionModel
+@{
+}
+<h1>Nueva anotación</h1>
+<form method="post" class="mt-3">
+    <div class="form-group">
+        <label class="form-control" asp-for="cedulaPaciente">Paciente</label>
+        <select class="form-control" asp-for="cedulaPaciente" asp-items="Model.pacientes"></select>
+    </div>
+    <div class="form-group">
+        <label class="form-control" asp-for="cedulaMedico">Medico</label>
+        <select class="form-control" asp-for="cedulaMedico" asp-items="Model.medicos"></select>
+    </div>
+    <div class="form-group">
+        <label class="form-control" asp-for="cedulaEnfermera">Enfermera</label>
+        <select class="form-control" asp-for="cedulaEnfermera" asp-items="Model.enfermeras"></select>
+    </div>
+    <div class="form-group">
+        <label class="form-control" asp-for="signoVital.nivel_azucar">Nivel de azúcar</label>
+        <input asp-for="signoVital.nivel_azucar" class="form-control">
+        <span class="text-danger" asp-validation-for="signoVital.nivel_azucar"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-control" asp-for="signoVital.presion">Presión</label>
+        <input asp-for="signoVital.presion" class="form-control">
+        <span class="text-danger" asp-validation-for="signoVital.presion"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-control" asp-for="signoVital.pulso_cardiaco">Pulso Cardiaco</label>
+        <input asp-for="signoVital.pulso_cardiaco" class="form-control">
+        <span class="text-danger" asp-validation-for="signoVital.pulso_cardiaco"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-control" asp-for="anotacion.fecha">Fecha</label>
+        <input class="form-control" asp-for="anotacion.fecha" value="@DateTime.Now.ToString()">
+        <span class="text-danger" asp-validation-for="anotacion.fecha"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-control" asp-for="anotacion.descripcion">Descripción</label>
+        <textarea class="form-control" asp-for="anotacion.descripcion" row="4"></textarea>
+        <span class="text-danger" asp-validation-for="anotacion.descripcion"></span>
+    </div>
+    <button class="btn btn-primary" type="submit">Guardar</button>
+    <a href="./ListAnotacion" class="btn btn-primary">Cancelar</a>
+</form>

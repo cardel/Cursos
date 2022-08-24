@@ -1,0 +1,41 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.DetailHistoriaModel
+@{
+}
+<h1>Detalle Historia por @Model.Tipo</h1>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Paciente</th>
+            <th>Medico</th>
+            <th>Enfermera</th>
+            <th>Pulso cardiaco</th>
+            <th>Presión</th>
+            <th>Nivel de azúcar</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    @foreach(var Historia in Model.Historias){
+        @foreach(var Anotacion in Historia.anotaciones){
+            @if((Model.Tipo=="medico" && Anotacion.medico.Id == @Model.Medico.Id)
+                ||
+                ((Model.Tipo=="enfermera") && Anotacion.enfermera.Id == @Model.Enfermera.Id)
+                ||
+                Model.Tipo=="paciente"
+                ){
+                <tr>
+                    <td>@Anotacion.paciente.nombre</td>
+                    <td>@Anotacion.medico.nombre</td>
+                    <td>@Anotacion.enfermera.nombre</td>
+                    <td>@Anotacion.signosVital.pulso_cardiaco</td>
+                    <td>@Anotacion.signosVital.presion</td>
+                    <td>@Anotacion.signosVital.nivel_azucar</td>
+                    <td>@Anotacion.descripcion</td>
+                    <td>@Anotacion.fecha.ToString("yyyy-MM-dd HH:mm")</td>
+                </tr>
+            }
+        }
+
+    }
+</table>

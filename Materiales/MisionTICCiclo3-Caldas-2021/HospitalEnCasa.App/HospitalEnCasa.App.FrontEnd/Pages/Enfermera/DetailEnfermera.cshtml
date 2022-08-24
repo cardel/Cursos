@@ -1,0 +1,14 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.DetailEnfermeraModel
+@{
+}
+<h1>Detalle enfermera @Model.enfermera.nombre</h1>
+<ul>
+    <li>Nombre: @Model.enfermera.nombre</li>
+    <li>Cedula: @Model.enfermera.cedula</li>
+    <li>Edad: @Model.enfermera.edad</li>
+    <li>Hospital: @Model.enfermera.hospital</li>
+    <li>Genero: @Model.enfermera.genero</li>
+    <li>Descripción: @Model.enfermera.descripcion</li>
+</ul>
+        <a asp-page="./ListEnfermera" class="btn btn-primary">Regresar</a>

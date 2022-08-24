@@ -1,0 +1,43 @@
+#TIene error de tipos
+let
+x = proc( (int*int->int) a, bool b) if b then (a 2 3) else (a 4 5)
+f = proc( int a, int b) proc(int c, int d) +(a, +(b, +(c, d)))
+in
+(x f true)
+
+#Esta correcto
+let
+x = proc( (int*int->int) a, bool b) if b then (a 2 3) else (a 4 5)
+f = proc( int a, int b) proc(int c, int d) +(a, +(b, +(c, d)))
+in
+(x (f 4 5) true)
+
+#Tiene error de tipos
+let
+x = proc( (int*int->int) a, bool b) if b then (a 2 3) else (a 4 5)
+f = proc( int a, int b) proc(int c, int d) +(a, +(b, +(c, d)))
+in
+(x (f 5 true) true)
+
+
+#No tiene error
+let
+x = proc( (int*int->int) a, bool b) if b then (a 2 3) else (a 4 5)
+f = proc( int a, int b) proc(int c, int d) +(a, +(b, +(c, d)))
+in
+(f 2 3)
+
+
+#NO tiene error
+let
+x = proc( (int*int->int) a, bool b) if b then (a 2 3) else (a 4 5)
+f = proc( int a, int b) proc(int c, int d) +(a, +(b, +(c, d)))
+in
+((f 2 3) 4 5)
+
+#La cantidad de argumentos no es válida
+let
+x = proc( (int*int->int) a, bool b) if b then (a 2 3) else (a 4 5)
+f = proc( int a, int b) proc(int c, int d) +(a, +(b, +(c, d)))
+in
+((f 2 3) 4 5 6)

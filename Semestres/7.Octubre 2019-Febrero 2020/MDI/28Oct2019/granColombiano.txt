@@ -1,0 +1,23 @@
+Un político es corrupto si y solo si da puestos en el gobierno, da prebendas para cumplir sus intereses o favorece a sus familiares aprovechandose de su puesto. 
+Si alguien corrupto convoca a una marcha contra la corrupción entonces ese alguien es un descarado. Es bien sabido que el Gran Colombiano dio puestos en el gobierno. Así mismo, el Gran Colombiano dio sobornos para favorecer sus objetivos. De la
+misma manera, ayudó a sus familiares aprovechandose de ser presidente. Además, hace poco el Gran Colombiano convocó a una marcha por la corrupción. Demuestre por inferencia lógica en lógica de predicados que el Gran Colombiano es un descarado.
+
+q(X): X da puestos en el gobierno
+r(x): X da prebendas para sus intereses
+s(x): X favorece a sus familiares
+
+p(X) X es corrupto
+t(X) X convoca a una marcha contra la corrupción
+u(X) X es un descarado
+p(X) <--> q(X) v r(X) v s(X)
+t(X) --> u(X)
+X es el gran colombiano
+
+Existe X, q(X) --> V
+Existe X, r(X) --> V
+Existe X, s(X) --> V
+Existe X, t(X) --> V
+
+p(X) <-> V   P(X) --> V
+t(X) <---> u(X)
+V <---> V

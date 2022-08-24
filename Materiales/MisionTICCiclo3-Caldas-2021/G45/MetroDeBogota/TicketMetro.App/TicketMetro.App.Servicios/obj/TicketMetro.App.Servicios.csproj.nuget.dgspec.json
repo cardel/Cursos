@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\MetroDeBogota\\TicketMetro.App\\TicketMetro.App.Servicios\\TicketMetro.App.Servicios.csproj": {}
+  },
+  "projects": {
+    "D:\\MetroDeBogota\\TicketMetro.App\\TicketMetro.App.Servicios\\TicketMetro.App.Servicios.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MetroDeBogota\\TicketMetro.App\\TicketMetro.App.Servicios\\TicketMetro.App.Servicios.csproj",
+        "projectName": "TicketMetro.App.Servicios",
+        "projectPath": "D:\\MetroDeBogota\\TicketMetro.App\\TicketMetro.App.Servicios\\TicketMetro.App.Servicios.csproj",
+        "packagesPath": "C:\\Users\\carde\\.nuget\\packages\\",
+        "outputPath": "D:\\MetroDeBogota\\TicketMetro.App\\TicketMetro.App.Servicios\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\carde\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.412\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

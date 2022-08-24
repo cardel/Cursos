@@ -1,0 +1,39 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.ListPacienteModel
+@using HospitalEnCasa.app.Dominio
+@{
+}
+
+<h1>Gestionar pacientes</h1>
+<p>En está pagina podrás gestionar los pacientes</p>
+<a class="btn btn-primary table-btn" asp-page="./AddPaciente">Agregar pacientes</a>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Cedula</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Longitud</th>
+      <th scope="col">Latitud</th>
+      <th scope="col">Familiar</th>
+      <th scope="col">Médico</th>
+      <th scope="col">Enfermera</th>   
+    </tr>
+  </thead>
+@foreach(var paciente in Model.pacientes){
+    <tr>
+        <td>@paciente.cedula</td>
+        <td>@paciente.nombre</td>
+        <td>@paciente.edad</td>
+        <td>@paciente.genero</td>
+        <td>@paciente.direccion</td>
+        <td>@paciente.longitud</td>
+        <td>@paciente.latitud</td>
+        <td>@paciente.familiar.nombre @paciente.familiar.direccion</td>
+        <td>@paciente.medico.nombre @paciente.medico.edad</td>
+        <td>@paciente.enfermera.nombre @paciente.enfermera.hospital</td>       
+    </tr>
+}
+</table>

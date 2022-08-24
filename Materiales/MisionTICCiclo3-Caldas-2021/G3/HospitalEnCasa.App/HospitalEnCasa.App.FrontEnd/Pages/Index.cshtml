@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a hospital en Casa</h1>
+    <p class="text-success">Esta aplicación ha sido creada por los beneficiarios del programa de misión, un saludo para todos</p>
+    <img class="img-responsive img-rounded" width="400px" src="~/images/hospital.jpg" alt="imagen principal">
+    @if(User.Identity.IsAuthenticated){
+        <h3>Bienvenido @User.Identity.Name</h3>
+        <span>Sus roles son:</span>
+        @if(User.IsInRole("Medico")){
+            <h4>Usted es un médico</h4>
+        }
+        @if(User.IsInRole("Enfermera")){
+            <h4>Usted es una enfermera</h4>
+        }
+
+    }
+</div>

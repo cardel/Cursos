@@ -1,0 +1,69 @@
+#lang eopl
+;; Constructores 
+(define vacio
+  (lambda ()
+    (lambda (signal)
+      (cond
+        [(equal? signal 0) 'vacio]
+        ))))
+ 
+(define reg
+  (lambda (key valor old_reg)
+    (lambda (signal)
+      (cond
+        [(equal? signal 0) 'reg]
+        [(equal? signal 1) key]
+        [(equal? signal 2) valor]
+        [(equal? signal 3) old_reg]
+        ))))
+ 
+;; predicados
+ 
+(define vacio?
+  (lambda (reg)
+    (equal? (reg 0) 'vacio)))
+ 
+(define reg?
+  (lambda (reg)
+    (equal? (reg 0) 'reg)))
+ 
+ 
+;; extractores
+(define reg->llave
+  (lambda (reg)
+    (reg 1)
+    ))
+ 
+(define reg->valor
+  (lambda (reg)
+    (reg 2)
+    ))
+ 
+(define reg->old-reg
+  (lambda (reg)
+    (reg 3)
+    ))
+ 
+;; prueba
+ 
+(define regA
+  (reg 1 22 (reg 2 33 (vacio))))
+ 
+(display (reg->llave regA))
+(display "\n")
+(display (reg->valor regA))
+(display "\n")
+(display (reg->old-reg regA))
+(display "\n")
+
+(define suma-valores
+  (lambda (reg)
+    (cond
+      [(vacio? reg) 0]
+      [(reg? reg)
+       (+
+        (reg->valor reg)
+        (suma-valores  (reg->old-reg reg)))]
+      [else (eopl:error "La estructura no es correcta")])))
+
+(display (suma-valores regA))

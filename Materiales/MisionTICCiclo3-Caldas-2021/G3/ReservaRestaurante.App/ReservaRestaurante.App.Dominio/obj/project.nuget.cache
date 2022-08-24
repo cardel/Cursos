@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "7iY+FCnWyU65V8EB/bOheRsbMI3rsSrKtlQAwFbltLmBm/gX9K6M8Dvhe8SkK7soOBKVfQxK3gbh0lfQ6Wnv3g==",
+  "success": true,
+  "projectFilePath": "D:\\Mintic\\misionticciclo3\\G3\\ReservaRestaurante.App\\ReservaRestaurante.App.Dominio\\ReservaRestaurante.App.Dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\carde\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\carde\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

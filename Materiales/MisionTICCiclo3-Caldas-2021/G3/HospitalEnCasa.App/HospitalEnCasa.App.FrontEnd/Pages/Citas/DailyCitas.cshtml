@@ -1,0 +1,24 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.DailyCitasModel
+@{
+}
+<table class="table table-dark table-striped">
+    <tr>
+        <th>Paciente</th>
+        <th>Medico</th>
+        <th>Sala</th>
+        <td>Descripción</td>
+        <td>Hora</td>
+    </tr>
+    @foreach(var cita in Model.Citas){
+        <tr>
+            <td>@cita.paciente.nombre</td>
+            <td>@cita.medico.nombre</td>
+            <td>@cita.sala</td>
+            <td>@cita.descripcion</td>
+            <td>@cita.hora</td>
+        </tr>
+    }
+</table>
+
+<a class="btn btn-primary" href="./ListCita">Regresar</a>

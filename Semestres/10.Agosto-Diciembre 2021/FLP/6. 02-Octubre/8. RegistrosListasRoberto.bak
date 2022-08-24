@@ -1,0 +1,45 @@
+#lang eopl
+#lang eopl
+;constructores
+(define empty-reg
+  (lambda () (list 'empty-reg)))
+ 
+(define reg
+  (lambda(llave valor old-reg)
+    (list 'reg llave valor old-reg)))
+ 
+;predicados
+(define empty-reg?
+  (lambda(reg)
+    (equal? (car reg)'empty-reg)))
+ 
+(define reg?
+  (lambda(reg)
+    (equal?(car reg)'reg)))
+ 
+;extractores
+(define reg->llave
+  (lambda(reg)
+    (cadr reg)))
+ 
+(define reg->valor
+  (lambda(reg)
+    (caddr reg)))
+ 
+(define reg->old-reg
+  (lambda(reg)
+    (cadddr reg)))
+ 
+;Area del programador
+(define reg1
+  (reg 'n1 4
+       (reg 'n2 12
+            (reg 'n3 54
+                 (reg 'n5 5
+                      (reg 'n6 1
+                           (reg 'n7 9 empty-reg)))))))
+ 
+;------------------------------------------------------------------------------------------------------------------
+
+ 
+ 

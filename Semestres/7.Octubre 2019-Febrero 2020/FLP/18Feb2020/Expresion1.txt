@@ -1,0 +1,11 @@
+let 
+	g = proc(int x, int y, bool z, bool w) if <(x,y) then and(z,w) else w
+	f = proc((int*int*bool*bool -> bool) h, (int->bool) p, int m, int n, bool o)
+		if (p m) then false else (h n m (p n) (p *(2,m)))
+	
+	q = proc(int a) >(a,4)
+	i = false
+	
+	in
+	   (f g q 1 5 i)
+	

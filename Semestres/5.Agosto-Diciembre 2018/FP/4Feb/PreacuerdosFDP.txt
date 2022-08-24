@@ -1,0 +1,10 @@
+17 de Feb Taller 1
+3 Marzo Taller 2
+17 Marzo Taller 3
+
+Taller: 15% + Miniproyecto 15%
+
+Parcial 1 35%
+Parcial 2 35%
+
+0.4*(P1 + P2)/10

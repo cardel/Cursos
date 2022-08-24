@@ -1,0 +1,52 @@
+#lang eopl
+
+;;Procedimientos contructores
+(define empty-reg
+  (lambda ()
+    (lambda (signal)
+      (cond
+        [(= signal 0) 'empty-reg]
+        [else (eopl:error "Señal no válida")]
+        ))))
+ 
+(define reg
+  (lambda (llave valor old-reg)
+    (lambda (signal)
+      (cond
+        [(= signal 0) 'reg] 
+        [(= signal 1) llave] 
+        [(= signal 2) valor] 
+        [(= signal 3) old-reg]
+        ))))
+ 
+;procedimientos observadores
+;;Predicados
+(define empty-reg?
+  (lambda (reg)
+    (equal? (reg 0) 'empty-reg)))
+ 
+(define reg?
+  (lambda (reg)
+    (equal? (reg 0) 'reg)))
+ 
+;;Extractores
+(define reg->llave
+  (lambda (reg)
+    (reg 1)))
+ 
+(define reg->valor
+  (lambda (reg)
+    (reg 2)))
+ 
+(define reg->old-reg
+  (lambda (reg)
+    (reg 3)))
+ 
+;Area del programador
+(define reg1
+  (reg 'n1 4
+       (reg 'n2 12
+            (reg 'n3 54
+                 (reg 'n5 5
+                      (reg 'n6 1
+                           (reg 'n7 9 empty-reg)))))))

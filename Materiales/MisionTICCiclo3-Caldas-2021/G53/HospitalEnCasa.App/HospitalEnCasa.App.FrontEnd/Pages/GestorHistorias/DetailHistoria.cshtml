@@ -1,0 +1,27 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.DetailHistoriaModel
+@{
+}
+<h1>Detalle historia</h1>
+<h2>Paciente: @Model.Historia.anotaciones[0].paciente.nombre</h2>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Medico</th>
+            <th>Enfermera</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var anotacion in Model.Historia.anotaciones){
+            <tr>
+                <td>@anotacion.fecha</td>
+                <td>@anotacion.medico.nombre</td>
+                <td>@anotacion.enfermera.nombre</td>
+                <td>@anotacion.descripcion</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-page="./ListHistoria" class="btn btn-primary">Regresar</a>

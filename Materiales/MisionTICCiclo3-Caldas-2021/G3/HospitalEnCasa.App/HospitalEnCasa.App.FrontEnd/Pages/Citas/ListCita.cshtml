@@ -1,0 +1,49 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.ListCitaModel
+@{
+}
+<h1>Gestionar citas</h1>
+<h2>Agregar cita</h2>
+<a class="btn btn-primary" asp-page="./AddCita">Añadir cita</a>
+<h2>Consultar por dia</h2>
+<form method="get" class="mt-3" action="./DailyCitas">
+    <div class="form-group row">
+        <label asp-for="Dia" class="form-control">Dia</label>
+        <input asp-for="Dia" class="form-control" value=@DateTime.Today.ToString("yyyy-MM-dd")>
+    </div>
+    <button type="submit" class="btn btn-primary">Consultar</button>
+</form>
+<h2>Consultar por rango de días</h2>
+<form method="get" class="mt-3" action="./RangeCitas">
+    <div class="form-group row">
+        <label asp-for="DiaInicial" class="form-control">Dia Inicial</label>
+        <input asp-for="DiaInicial" class="form-control" value=@DateTime.Today.AddDays(-10).ToString("yyyy-MM-dd")>
+    </div>
+    <div class="form-group row">
+        <label asp-for="DiaFinal" class="form-control">Dia Final</label>
+        <input asp-for="DiaFinal" class="form-control" value=@DateTime.Today.ToString("yyyy-MM-dd")>
+    </div>
+    <button type="submit" class="btn btn-primary">Consultar</button>
+</form>
+<h2>Lista de citas</h2>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Paciente</th>
+        <th>Medico</th>
+        <th>Descripción</th>
+        <th>Consultorio</th>
+        <th>Dia</th>
+        <th>Hora</th>
+    </tr>
+    @foreach(var cita in @Model.citas){
+        <tr>
+            <td>@cita.paciente.nombre</td>
+            <td>@cita.medico.nombre</td>
+            <td>@cita.descripcion</td>
+            <td>@cita.sala</td>
+            <td>@cita.dia</td>
+            <td>@cita.hora</td>
+        </tr>
+    }
+</table>
+<a class="btn btn-primary" href="./ListCita">Regresar</a>

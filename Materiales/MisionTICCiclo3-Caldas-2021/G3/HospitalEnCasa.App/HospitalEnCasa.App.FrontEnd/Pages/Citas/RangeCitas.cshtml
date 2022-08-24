@@ -1,0 +1,60 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.RangeCitasModel
+@{
+}
+<h1>Reporte de citas</h1>
+<table class="table table-striped table-dark">
+    <tr>
+        <th>Día</th>
+        <th>Número de citas</th>
+    </tr>
+    @{
+        var diasYconteo = Model.Dias.Zip(Model.NumCitas, (n, w) => new { Day = n, Count = w });
+        var color1 = "color: blue";
+        var color2 = "color: red";
+    }
+    @foreach(var dc in diasYconteo){
+        <tr>
+            <td>@dc.Day.ToString("dddd,dd/MMMM/yyyy")</td>
+            <td>@dc.Count</td>
+        </tr>      
+    }
+</table>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Día', 'Número de citas', { role: 'style' } ],
+        @{
+            var count = 0;
+        }
+        @foreach(var dc in diasYconteo){
+            var seleccion = (count%2==0)?color1:color2;
+            @:['@dc.Day.ToString("dd/MM/yyyy")',@dc.Count,'@seleccion'],
+            count++;
+        }
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Citas por dia",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+<div id="barchart_values" style="width: 900px; height: 300px;"></div>
+<a class="btn btn-primary" href="./ListCita">Regresar</a>

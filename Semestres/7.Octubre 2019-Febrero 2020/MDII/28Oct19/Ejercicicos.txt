@@ -1,0 +1,18 @@
+Product Rule: If one even can occur in k different ways, and a second event can occur in m different ways, then the number of ways in which both events can occur is km.
+
+That is, there are k possible outcomes for the first event, and m for the second, so there are km total possible combinations of outcomes.
+
+The truth table has one row for every possibility. Each variable has two possible outcomes: true or false. If there are n different variables, then you have two possibilities for each, and the number of total combinations is the product of the number of possible outcomes for each. That amounts to a product of 2 with itself, n times, or 2n.
+
+Inductively: one variable has 2 possible outcomes. Assume that k variables have 2k possible outcomes. How many possible outcomes are there for k+1 variables? There are 2k ways in which you can have outcomes in which the last variable is false, and another 2k ways in which you can have outcomes in which the last variable is true. So there is a total of 2k+2k=2(2k)=2k+1 different possible outcomes.
+
+33)
+
+
+a) If n = 1 then there are two choices for the first and only element in the domain. So, we have 2 functions if n = 1 If n = 2 then there are two choices for the first element in the domain. Then, since one choice is taken there is one choice for the second element in the domain. So, we have 2 * 1 = 2 functions if n = 2. If n >= 3 then there will always be elements in the domain with no images to map to. So, we have 0 functions if n >= 3
+
+Source https://www.physicsforums.com/threads/number-of-functions-from-one-set-to-another.666721/
+
+
+
+https://www.slader.com/textbook/9780073383095-discrete-mathematics-with-applications-7th-edition/398/

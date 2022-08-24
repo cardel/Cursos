@@ -1,0 +1,26 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.ListHorarioModel
+@{
+}
+<h1>Horarios registrados</h1>
+<a class="btn btn-primary" asp-page="./AddHorario">Añadir Horario</a>
+<table class="table table-dark">
+    <thead>
+        <th>Medico</th>
+        <th>Dia</th>
+        <th>Hora inicial</th>
+        <th>Hora final</th>
+    </thead>
+    <tbody>
+        @foreach(var medico in Model.Medicos){
+            @foreach(var horario in medico.Horarios){
+                <tr>
+                    <td>@medico.nombre</td>
+                    <td>@horario.Dia</td>
+                    <td>@horario.Hora_Inicio.ToString("hh:mm")</td>
+                    <td>@horario.Hora_Final.ToString("hh:mm")</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

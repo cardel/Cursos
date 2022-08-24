@@ -1,0 +1,29 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.ListCitaModel
+@{
+}
+<h1>Gestor citas</h1>
+<p>Aqui podrás gestionar las citas</p>
+<a asp-page="./AddCita" class="btn btn-primary">Crear cita</a>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Paciente</th>
+            <th>Medico</th>
+            <th>Sala</th>
+            <th>Dia</th>
+            <th>Hora</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var cita in Model.Citas){
+            <tr>
+                <td>@cita.Paciente.nombre</td>
+                <td>@cita.Medico.nombre</td>
+                <td>@cita.Sala</td>
+                <td>@cita.Dia.ToString("yyyy/MM/dd")</td>
+                <td>@cita.Hora.ToString("HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.ListEnfermeraModel
+@{
+}
+<h1>Gestionar enfermeras</h1>
+<p>En está pagina podrás gestionar las enfermeras</p>
+<a class="btn btn-primary table-btn" asp-page="./AddEnfermera">Agregar Enfermera</a>
+<table class="table table-dark">
+<tr>
+    <th scope="col">Cedula</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Genero</th>
+    <th scope="col">Edad</th>
+    <th scope="col">Hospital</th>
+    <th scope="col">Información laboral</th>
+    <th scope="col">Acciones</th>
+</tr>
+@foreach(var enfermera in Model.enfermeras){
+    <tr>
+        <td>@enfermera.cedula</td>
+        <td>@enfermera.nombre</td>
+        <td>@enfermera.genero</td>
+        <td>@enfermera.edad</td>
+        <td>@enfermera.hospital</td>
+        <td>@enfermera.informacion_laboral</td>
+        <td><a class="btn btn-primary table-btn" asp-page="./DetailEnfermera" asp-route-cedula="@enfermera.cedula">Detalles</a><br>
+        <a class="btn btn-primary table-btn" asp-page="./EditEnfermera" asp-route-cedula="@enfermera.cedula">Editar</a><br>
+        <a class="btn btn-primary table-btn" asp-page="./RemoveEnfermera" asp-route-cedula="@enfermera.cedula">Eliminar</a>
+        <br>
+    </tr>
+}
+</table>

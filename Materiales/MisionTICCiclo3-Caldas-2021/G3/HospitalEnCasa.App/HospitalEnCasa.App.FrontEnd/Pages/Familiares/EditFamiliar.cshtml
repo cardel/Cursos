@@ -1,0 +1,55 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.EditFamiliarModel
+@using HospitalEnCasa.app.Dominio
+@{
+}
+<h1>Editar familiar</h1>
+<h2>@Model.familiar.nombre</h2>
+<p class="text-info">A continuación puedes editar a este familiar</p>
+
+<form method="post">
+    <input hidden asp-for="familiar.Id">
+    <div class="form-group">
+        <label asp-for="familiar.cedula">Cedula</label>
+        <input asp-for="familiar.cedula" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label asp-for="familiar.nombre">Nombre</label>
+        <input asp-for="familiar.nombre" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="familiar.genero">Genero</label>
+        <select asp-for="familiar.genero" class="form-control" asp-items="Html.GetEnumSelectList<Genero>()"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="familiar.edad">Edad</label>
+        <input asp-for="familiar.edad" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="familiar.direccion">Dirección</label>
+        <input asp-for="familiar.direccion" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label asp-for="familiar.longitud">Longitud</label>
+        <input asp-for="familiar.longitud" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label asp-for="familiar.latitud">Latitud</label>
+        <input asp-for="familiar.latitud" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label asp-for="familiar.username">Username</label>
+        <input asp-for="familiar.username" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label asp-for="familiar.password">Contraseña</label>
+        <input asp-for="familiar.password" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="familiar.email">Email</label>
+        <input asp-for="familiar.email" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="./ListFamiliar" class="btn btn-primary">Cancelar</a>
+</form>

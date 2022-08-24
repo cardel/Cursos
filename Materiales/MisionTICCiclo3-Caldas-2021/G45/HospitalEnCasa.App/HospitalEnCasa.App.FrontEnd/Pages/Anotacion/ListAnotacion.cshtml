@@ -1,0 +1,35 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.ListAnotacionModel
+@{
+}
+<h1>Gestionar anotaciones</h1>
+<a class="btn btn-primary" href="./AddAnotacion">Agregar anotación</a>
+<table class="table table-striped">
+    <thead>
+        <th>Consecutivo</th>
+        <th>Paciente</th>
+        <th>Medico</th>
+        <th>Enfermera</th>
+        <th>Pulso cardiaco</th>
+        <th>Presion</th>
+        <th>Nivel azucar</th>
+        <th>Descripción</th>
+        <th>Fecha</th>
+    </thead>
+    <tbody>
+        @foreach (var anotacion in Model.anotaciones)
+        {
+            <tr>
+                <td>@anotacion.Id</td>
+                <td>@anotacion.paciente.nombre</td>
+                <td>@anotacion.medico.nombre</td>
+                <td>@anotacion.enfermera.nombre</td>
+                <td>@anotacion.signosVital.pulso_cardiaco</td>
+                <td>@anotacion.signosVital.presion</td>
+                <td>@anotacion.signosVital.nivel_azucar</td>
+                <td>@anotacion.descripcion</td>
+                <td>@anotacion.fecha</td>
+            </tr>
+        }
+    </tbody>
+</table>

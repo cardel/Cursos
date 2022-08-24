@@ -1,0 +1,17 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 5-EjemploListasDeListas) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;;Contrato: Size: Lista de lista de simbolos -> numero
+(define (size lst)
+  (cond
+    [(empty? lst) 0]
+    [(cons? (first lst)) (+(size (first lst)) (size (rest lst)))]
+    [(symbol? (first lst)) (+ 1 (size (rest lst)))]
+    [else (+ 0 (size (rest lst)))]
+    )
+  )
+
+
+(define listaA (cons (cons 'a (cons 'b (cons 'c empty)))
+                     (cons 3
+                           (cons (cons 'a (cons 'b (cons 7 empty)))  empty))))

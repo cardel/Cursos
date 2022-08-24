@@ -1,0 +1,16 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.DetailPacienteModel
+@{
+}
+<h1>Detalle paciente @Model.paciente.nombre</h1>
+<ul>
+    <li>Cedula: @Model.paciente.cedula</li>
+    <li>Nombre: @Model.paciente.nombre</li>
+    <li>Edad: @Model.paciente.edad</li>
+    <li>Genero: @Model.paciente.genero</li>
+    <li>Latitud: @Model.paciente.latitud</li>
+    <li>Longitud: @Model.paciente.longitud</li>
+    <li>Medico: @Model.paciente.medico.nombre</li>
+    <li>Familiar: @Model.paciente.familiar.nombre</li>
+    <li>Enfermera: @Model.paciente.enfermera.nombre</li>
+</ul>

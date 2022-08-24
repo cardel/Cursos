@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$module$/Primer examen</text>
+  </category>
+</question>
+ 
+<question type="numerical">
+  <name>
+    <text>Basic addition</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>What is \(8+3\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.1000000</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>11</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="shortanswer">
+  <name>
+    <text>Newton’s name</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>What was Newton’s first name? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.1000000</penalty>
+  <hidden>0</hidden>
+  <usecase>1</usecase>
+  <answer fraction="100" format="plain_text">
+    <text>Isaac </text>
+  </answer>
+  <answer fraction="0" format="plain_text">
+    <text> Fig </text>
+    <feedback format="html"><text><![CDATA[<p>No, silly!</p>]]></text></feedback>
+  </answer>
+  <answer fraction="100" format="plain_text">
+    <text>{fraction=0} Sir</text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name>
+    <text>A first derivative</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>What is the first derivative of \(x^3\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.1000000</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\frac {1}{4} x^4+C\)</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(3x^2\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(51\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name>
+    <text>Pregunta2</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Which numbers are prime? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.1000000</penalty>
+  <hidden>0</hidden>
+  <single>false</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>5</p>]]></text>
+  </answer>
+  <answer fraction="-50" format="html">
+    <text><![CDATA[<p>6</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>7</p>]]></text>
+  </answer>
+  <answer fraction="-50" format="html">
+    <text><![CDATA[<p>8</p>]]></text>
+  </answer>
+</question>
+<question type="category">
+  <category>
+    <text>$module$/Preguntas Q2</text>
+  </category>
+</question>
+ 
+<question type="essay">
+  <name>
+    <text>Hola</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Hola hábia una vez un bárco ñuno <CENTER><IMG width=162 height=162 SRC="data:image/png;base64,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 
+"></CENTER> </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.1000000</penalty>
+  <hidden>0</hidden>
+  <responserequired>0</responserequired>
+  <responseformat>noinline</responseformat>
+  <responsefieldlines>15</responsefieldlines>
+  <attachments>1</attachments>
+  <attachmentsrequired>0</attachmentsrequired>
+  <graderinfo format="html"><text><![CDATA[
+    <ul>
+      <li>hnotes for grader i </li>
+      <li>hnotes for grader i</li>
+    </ul>
+  ]]></text></graderinfo>
+  <responsetemplate format="html"><text/></responsetemplate>
+</question>
+<question type="multichoice">
+  <name>
+    <text>my question</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Compute \(\int 4x^3\,dx\). </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.1000000</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(x^4+C\)</p>]]></text>
+  </answer>
+  <answer fraction="50" format="html">
+    <text><![CDATA[<p>\(x^4\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(12x^2\)</p>]]></text>
+  </answer>
+</question>
+ 
+</quiz>

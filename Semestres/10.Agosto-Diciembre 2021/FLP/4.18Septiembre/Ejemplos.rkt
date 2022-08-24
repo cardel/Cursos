@@ -1,0 +1,96 @@
+#lang eopl
+
+(define exp1 'x) ;;Identificador
+(define exp2 '(lambda (x) x)) ;;Lambda-exp
+(define exp3 '( (lambda (y) x) (x y))) ;;App-exp
+(define exp4 '(lambda (y) x)) ;;Lambda-exp
+
+(define ocurre-libre?
+  (lambda (exp var)
+    (cond
+      [(symbol? exp) (equal? exp var)]
+      [(equal? (car exp) 'lambda)
+       (and
+        (not (equal? (caadr exp) var))
+        (ocurre-libre? (caddr exp)  var))]
+      [else
+       (or
+        (ocurre-libre? (car exp) var)
+        (ocurre-libre? (cadr exp) var))
+       ]
+      )
+    )
+  )
+
+(let
+    (
+     (x 3)(y 4)
+     )
+  (+
+   (let
+       (
+        (x (+ y 5))
+        )
+     (* x y))
+   x)
+  )
+
+
+(let
+    (
+     (x 3)(y 4)
+     )
+  (+
+   (let
+       (
+        (x (+ x 5))
+        (y x)
+        )
+     (* x y))
+   x)
+  )
+
+(let (
+      (x 6)
+      (y 7)
+      )
+  (*
+   (let ((y 8))
+     (+
+      (let ((x 6) (y x))
+        (+ x
+           (let ((y 3) (x y)) (+ x 2 y))
+           )
+        )
+      y)
+     )
+   (let ((x 4))
+     (- y x))))
+
+
+(define common-arb
+  (lambda (arb1 arb2)
+    (cond
+      [(or (null? arb1) (null? arb2)) '()]
+      [(and (number? (car arb1)) (number? (car arb2)))
+       (list
+        0
+        (common-arb (cadr arb1) (cadr arb2))
+        (common-arb (caddr arb1) (caddr arb2))
+        )]
+      [else '()])))
+
+(define arb1  '(1 (1 (2 (3 () ()) (4 (4 () () ) ())) (2 () ())) (3 () ()))  )
+(define arb2  '(0 (1 () ()) (4 (4 () ()) (3 (2 () () ) ()))))
+(define arb3  '(0 (1 (5 () () ) (8 () ())) (4 (4 () ()) (3 (2 () () ) ()))))
+
+(display "\n")
+(display (common-arb arb1 arb2))
+(display "\n")
+(display (common-arb arb1 arb3))
+
+
+
+             
+
+

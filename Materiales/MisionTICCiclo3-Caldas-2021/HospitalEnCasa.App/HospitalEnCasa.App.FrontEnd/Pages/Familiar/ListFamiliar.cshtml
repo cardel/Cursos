@@ -1,0 +1,33 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.ListFamiliarModel
+@{
+}
+<h1>Gestionar Familiares</h1>
+<a class="btn btn-primary table-btn" asp-page="./AddFamiliar">Agregar familiar</a>
+<table class="table table-striped">
+<tr>
+    <th scope="col">Cedula</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Genero</th>
+    <th scope="col">Edad</th>
+    <th scope="col">Dirección</th>
+    <th scope="col">Longitud</th>
+    <th scope="col">Latitud</th>
+    <!--<th scope="col">Acciones</th>-->
+</tr>
+@foreach(var familiar in Model.familiares){
+    <tr>
+        <td>@familiar.cedula</td>
+        <td>@familiar.nombre</td>
+        <td>@familiar.genero</td>
+        <td>@familiar.edad</td>
+        <td>@familiar.direccion</td>
+        <td>@familiar.latitud</td>
+        <td>@familiar.longitud</td>
+        <!--<td><a class="btn btn-primary table-btn" asp-page="./DetailEnfermera" asp-route-cedula="@familiar.cedula">Detalles</a>
+        <a class="btn btn-primary table-btn" asp-page="./EditEnfermera" asp-route-cedula="@familiar.cedula">Editar</a>
+        <a class="btn btn-primary table-btn" asp-page="./RemoveEnfermera" asp-route-cedula="@familiar.cedula">Eliminar</a>
+        </td>-->
+    </tr>
+}
+</table>

@@ -1,0 +1,10 @@
+*****Compilar Netbeans
+
+ant jar
+
+
+*****Compilar C#
+Instalar el paquete mono-complete
+
+mcs -out:salida.exe Program
+mono salida.exe

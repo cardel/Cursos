@@ -1,0 +1,13 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.RemoveFamiliarModel
+@{
+}
+<h1>Eliminar familiar @Model.familiar.nombre</h1>
+<form method="post" class="mt-3">
+    <input hidden asp-for="familiar.cedula">
+    <input hidden asp-for="familiar.Id">
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Eliminar</button>
+        <a asp-page="./Listfamiliar" class="btn btn-primary">Cancelar</a>
+    </div>
+</form>

@@ -1,0 +1,19 @@
+let g = proc((bool*int->int) x, ? y, (int*int->bool) z, ? t, ? w)
+		 if (z y t) then (x true t) else (x false w)
+	
+	f = proc(? j, ? k)
+		if j then *(k,k) else k
+		
+	a = 2
+	
+	in
+	   let
+		fun1 = proc(? l, ? m) 
+			if >(l,m) then true else false
+		
+		in
+			let
+				v2 = (g f 3 fun1 4 *(2,a))
+				
+				in
+				   (fun1 v2 (f true a))

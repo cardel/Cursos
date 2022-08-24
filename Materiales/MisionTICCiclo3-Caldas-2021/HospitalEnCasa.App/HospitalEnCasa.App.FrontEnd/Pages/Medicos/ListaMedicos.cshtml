@@ -1,0 +1,30 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.ListaMedicosModel
+@{
+}
+<h1>Gestionar médicos</h1>
+<a class="btn btn-primary table-btn" asp-page="./CrearMedico">Agrega médico</a>
+<table class="table table-dark">
+<tr>
+    <th scope="col">Cedula</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Genero</th>
+    <th scope="col">Edad</th>
+    <th scope="col">Hospital</th>
+    <th scope="col">Tarjeta profesional</th>
+    <th scope="col">Acciones</th>
+</tr>
+@foreach(var medico in Model.medicos){
+    <tr>
+        <td>@medico.cedula</td>
+        <td>@medico.nombre</td>
+        <td>@medico.genero</td>
+        <td>@medico.edad</td>
+        <td>@medico.nombre_hospital</td>
+        <td>@medico.tarjeta_profesional</td>
+        <td><a class="btn btn-primary table-btn" asp-page="./DetalleMedico" asp-route-cedula="@medico.cedula">Detalles</a>
+        <a class="btn btn-primary table-btn" asp-page="./EditarMedico" asp-route-cedula="@medico.cedula">Editar</a>
+        </td>
+    </tr>
+}
+</table>

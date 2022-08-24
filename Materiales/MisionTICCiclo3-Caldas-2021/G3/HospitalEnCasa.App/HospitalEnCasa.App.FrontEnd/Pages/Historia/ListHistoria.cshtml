@@ -1,0 +1,19 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.ListHistoriaModel
+@{
+}
+<h1>Historias</h1>
+<table class="table striped-table">
+    <tr>
+        <th>Paciente</th>
+        <th>Descripción</th>
+        <td>Ver historia médica</td>
+    </tr>
+    @foreach(var historia in Model.historias){
+        <tr>
+            <td>@historia.anotaciones[0].paciente.nombre</td>
+            <td>@historia.descripcion</td>
+            <td><a asp-page="./DetailHistoria" asp-route-idHistoria="@historia.Id">Ver detalles</a></td>
+        </tr>
+    }
+</table>

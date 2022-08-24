@@ -1,0 +1,39 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.AddCitaModel
+@using HospitalEnCasa.app.Dominio
+@{
+}
+<h1>Crear cita</h1>
+<p class="text-left">Aquí podrás añadir una nueva cita</p>
+<p class="text-danger">@Model.Mensaje</p>
+<form method="post" class="mt-3">
+    <div class="form-group row">
+        <label asp-for="CedulaPaciente" class="form-control">Paciente</label>
+        <select class="form-control" asp-for="CedulaPaciente" asp-items="@Model.Pacientes"></select>
+    </div>
+    <div class="form-group row">
+        <label asp-for="CedulaMedico" class="form-control">Medico</label>
+        <select class="form-control" asp-for="CedulaMedico" asp-items="@Model.Medicos"></select>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Cita.Dia" class="form-control">Dia</label>
+        <input class="form-control" asp-for="Cita.Dia" value=@DateTime.Today.ToString("yyyy-MM-dd")>
+        <span asp-validation-for="Cita.Dia" class="text-danger" ></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Cita.Hora" class="form-control">Hora</label>
+        <input class="form-control" asp-for="Cita.Hora" value=@DateTime.Now.AddMinutes(60).ToString("hh:00")>
+        <span asp-validation-for="Cita.Hora" class="text-danger" ></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Cita.Sala" class="form-control">Sala</label>
+        <select class="form-control" asp-for="Cita.Sala" asp-items="Html.GetEnumSelectList<Sala>()"></select>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Cita.Descripcion" class="form-control">Descripción</label>
+        <input asp-for="Cita.Descripcion" class="form-control">
+        <span asp-validation-for="Cita.Descripcion" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-page="./ListCita" class="btn btn-primary">Cancelar</a>
+</form>

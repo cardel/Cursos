@@ -1,0 +1,120 @@
+1,El general amante de la vida,Juana de Arco,2008,3
+2,La mosquita que mató al general,Pepito Perez,2009,4
+3,Los pecados del dictador del busque, Anónimo,2011,4
+4,El señor de las moscas,Francisco Perez,2014,9
+5,El huracán de pasiones del restaurante,Ana Sofia Velez,2016,3
+7,Estructuras de datos: ¿Una amenaza para la humanidad?,Claudia Gurisati,2009,4
+8,Los computadores MAC ¿Dominarán nuestra mente?,Martha Lozano,2019,4
+9,Cometas en el cielo,Khaled Hosseini,2013,7
+10,Los Buddenbrook,Thomas Mann,1980,8
+11,A Gloriosa Familia,Pepetela,1930,2
+12,El ancho mar de los Sargazos,Jean Rhys,1917,9
+13,Ciudades de sal,Albert Camus,2007,4
+14,El extranjero,Jorge Luis Borges,1990,1
+15,Ficciones,Raffi,1924,7
+16,El visionario,Tim Winton,1913,2
+17,Cloudstreet,Robert Musil,1901,9
+18,El hombre sin atributos,Chingiz Abdullayev,2021,3
+19,Blue Angels,Sidney Poitier,1962,2
+20,The Measure of a Man,Tahmima Amam,1924,5
+21,Beka Lamb,Hugo Claus,1969,2
+22,Raza de bronce,Zee Edgell,1903,4
+23,Diario de Zlata,Svetlana Alexievich,2014,8
+24,La primera agencia de mujeres detectives,Alcides Arguedas,1952,10
+25,Don Casmurro,Zlata Filipovic,1937,5
+26,My Life in a Harem,Alexander McCall Smith,1916,8
+27,Bajo el yugo,Machado de Assis,1945,7
+28,The Circle of Karma,Jillian Lauren,1992,2
+29,Se lo llevaron,Ivan Vazov,1937,5
+30,El viejo y la medalla,Kunzang Choden,1942,9
+31,Ana de las tejas verdes,Loung Ung,1905,3
+32,Los acuarios de Pyongyang,Ferdinand Oyono,2021,5
+33,La vegetariana,Romain Gary,1962,3
+34,La isla de los hombres solos,Isabel Allende,1988,3
+35,Havana Bay,Cao Xueqin,1960,7
+36,Huasipungo,Kang Chol Hwan,1971,1
+37,Entre dos palacios,Han Kang,1970,8
+38,Bitter Grounds,Slavenka Drakulik,1969,6
+39,The Sand Fish,Martin Cruz Smith,1928,5
+40,Alamut,Jorge Icaza,1962,10
+41,Don Quijote de la Mancha,Naguib Mahfuz,1970,10
+42,Verdad y justicia,Maha Gargash,1937,6
+43,Noli Me Tangere,Vladimir Bartol,1960,10
+44,Soldados desconocidos,Miguel de Cervantes,2000,5
+45,Tales of the Tikongs,Harper Lee,1922,3
+46,El conde de Montecristo,Maaza Mengiste,1925,9
+47,Islands,Alejandro Dumas,2007,7
+48,Papillon,Shota Rustaveli,1954,10
+49,El palacio del pavo real,Homero,1976,10
+50,Breath,Gretel Ehrlich,2001,7
+51,Cipotes,Margarita Mateo Palmer,1999,2
+52,Eclipse of the Crescent Moon,Edwige Danticat,1946,10
+53,La voz,Arundhati Roy,1954,10
+54,Hijo de todos los pueblos,Pramoedya Ananta Toer,1908,5
+55,Shahnameh,Hassan Blasim,2016,10
+56,El loco de la plaza Libertad,James Joyce,1981,9
+57,Ulises,Susan Abulhawa,1967,1
+58,Suremada,Dante Alighieri,1964,2
+59,Amaneceres en Jenin,Marlon James,2001,8
+60,La divina comedia,Natsume Soseki,1981,4
+61,Breve historia de siete asesinatos,Abay Qunanbayuli,1967,9
+62,Kokoro,Chingiz Aitmatov,2009,9
+63,The Book of Words,Randa Jarrar,1926,3
+64,Jamilia,Bryan Thao Worra,1945,1
+65,A Map of Home,Rabih Alameddine,1961,4
+66,In the Other Side of the Eye,Hisham Matar,1948,9
+67,The Hakawati,Daiva Markelis,1970,5
+68,Solo en el mundo,Jean Portante,1936,10
+69,White Field,Goce Smilevski,1954,6
+70,A Lithuanian American Life,Tan Twan Eng,2012,4
+71,Selected Poems,Tahar Ben Jelloun,1957,7
+72,La hermana de Freud,Samuel Cotton,1983,10
+73,An Epic of Old Mali,Juan Rulfo,1958,3
+74,A Journey into Contemporary African Slavery,Nivolai Lilin,1932,6
+75,Siberian Education,Galsan Tschinag,1913,5
+76,Cielo azul,Starling Lawrence,2011,3
+77,Montenegro,Mia Couto,1925,6
+78,Smile as they Bow,Nu Nu Yi,1973,9
+79,Born of the Sun,Gillian Cross,1954,9
+80,Sarraounia,Narayan Wagle,2011,7
+81,Todo se desmorona,Gioconda Belli,1926,9
+82,Hambre,Abdoulaye Mamani,1939,4
+83,The Bone People,Chinua Achebe,1904,9
+84,The Turtle of Oman,Knut Hamsun,1975,3
+85,El descubrimiento del cielo,Keri Hulme,1947,7
+86,El fundamentalista reticente,Naomi Shihab Nye,1946,10
+87,Plenilunio,Harry Mulisch,1917,7
+88,Death of a Muruk,Mohsin Hamid,1929,2
+89,Yo el Supremo,Bernard Narokobi,2007,1
+90,Lituma en los Andes,Augusto Roa Bastos,2000,9
+91,Pan Tadeusz,Mario Vargas Llosa,1978,6
+92,Baltasar y Blimunda,Adam Mickiewicz,1987,6
+93,The Emergence of Qatar,Esmeralda Santiago,1979,7
+94,Grandes Esperanzas,Habibur Rahman,1969,9
+95,Batouala,Charles Dickens,2015,2
+96,Las aventuras del valeroso soldado Schwejk,Sony Labou Tansi,1939,6
+97,El antipueblo,Liviu Rebreanu,1914,4
+98,La maravillosa vida breve de Oscar Wao,Rafik Scahmi,1975,5
+99,El bosque de los ahorcados,Nadifa Mohamed,1991,8
+100,Guerra y paz,Michael Ondaatje,1963,7
+101,El lado oscuro del amor,Leila Aboulela,1934,3
+102,The Orchard of Lost Souls,Johanna Spyri,1902,3
+103,Desgracia,Cynthia McLeod,1987,7
+104,They Poured Fire on Us from the Sky,Kukrit Pramoj,1925,3
+105,Lyrics Alley,Shawna Yang Ryan,1983,5
+106,La saga de Gosta Berling,Abdulrazak Gurnah,1901,8
+107,Heidi,Andrei Volos,1958,3
+108,The Cost of Sugar,Timothy Mo,2014,9
+109,Four Reigns,Ak Welsapar,1923,10
+110,Green Island,Orhan Pamuk,2008,6
+111,Desertion,Andrei Kurkov,2019,1
+112,Hurramabad,Moses Isegawa,1937,1
+113,La redundancia del valor,Eduardo Galeano,1931,2
+114,The Tale of Aypi,Tom Bissell,1922,3
+115,Me llamo Rojo,Grace Mera Molisa,1924,3
+116,Chasing the Sea,Bao Ninh,1962,8
+117,Black Stone,Zaid Mutiee Damaj,1969,8
+118,El dolor de la guerra,Alexandra Fuller,1916,8
+119,The Hostage,Fernando Cabezas,1965,1
+120,Travels with an African Soldier,Juan Locha,1900,3
+121,La casa del hambre,Maria Alvarez,1903,6

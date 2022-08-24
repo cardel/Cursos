@@ -1,0 +1,31 @@
+
+#####COmprimir
+zip resultados.zip -r *  -i */comentarios.pdf
+zip resultados.zip -r *  -i */comentarios.txt
+
+#####Netbeans projecto
+
+ant 
+
+#######Eclipse
+
+mvn compile
+
+eclipse -noSplash -data . -application org.eclipse.jdt.apt.core.aptBuild
+
+
+########Itellij
+
+#Compilar
+
+javac -sourcepath src -d compilado/ src/*.java
+
+
+#Ejecutar
+
+java -cp compilado inicio
+
+##### NET
+
+mcs archivo.cs
+mono archivo.exe

@@ -1,0 +1,12 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.RemoveMedicoModel
+@{
+}
+<h1>Confirmación</h1>
+<p>Desea eliminar al medico @Model.medico.nombre</p>
+<form method="post" class="mt-3">
+    <input hidden asp-for="medico.cedula"/>
+    <button type="submit" class="btn btn-primary">Sí</button>
+    <a asp-page="./ListMedicos" class="btn btn-primary">No</a>
+
+</form>

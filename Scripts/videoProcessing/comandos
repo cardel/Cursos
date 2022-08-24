@@ -1,0 +1,24 @@
+#partir archivo
+ffmpeg -i "1Cortar810.mp4" -ss 00:00:00 -t 00:08:10 -vcodec copy -acodec copy 1.mp4
+ffmpeg -i "2(DebeCortarse).flv" -ss 00:00:00 -t 00:28:15 -vcodec copy -acodec copy 2.flv
+
+Extraer audio
+
+ffmpeg -i 3.mp4 -vn -ar 44100 -ac 2 -ab 192k -f mp3 3.mp3
+
+Agregar audio
+ffmpeg -i 3Mudo.mp4 -i 3.mp3 -codec copy -shortest 3.mp4
+ffmpeg -i 3Mudo.mp4 -i 3.mp3 -c copy -map 0:v:0 -map 1:a:0 -shortest 3.mp4
+
+
+#juntar 
+
+ffmpeg -f concat -i files -c copy out.mp4
+ffmpeg -f concat -i files -c copy outF.mkv
+
+
+#Reducir tamaño
+https://trac.ffmpeg.org/wiki/Encode/YouTube
+ffmpeg -i out.mp4 -c:v libx264 -preset slow -crf 18 -c:a aac -b:a 192k -pix_fmt yuv420p out.mkv
+
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=PDFREDUCIDO.pdf solucion.pdf

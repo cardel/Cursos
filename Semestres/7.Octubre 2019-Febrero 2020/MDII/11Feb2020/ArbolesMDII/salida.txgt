@@ -1,0 +1,37 @@
+[x, x, o]
+[x, -, -]
+[o, o, -]
+Inicio hijos
+Primer nivel
+
+[x, x, o]
+[x, x, -]
+[o, o, -]
+[x, x, o]
+[x, x, o]
+[o, o, -]
+[x, x, o]
+[x, x, -]
+[o, o, o]
+Primer nivel
+
+[x, x, o]
+[x, -, x]
+[o, o, -]
+[x, x, o]
+[x, o, x]
+[o, o, -]
+[x, x, o]
+[x, -, x]
+[o, o, o]
+Primer nivel
+
+[x, x, o]
+[x, -, -]
+[o, o, x]
+[x, x, o]
+[x, o, -]
+[o, o, x]
+[x, x, o]
+[x, -, o]
+[o, o, x]

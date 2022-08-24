@@ -1,0 +1,38 @@
+﻿@page
+@model HospitalEnCasa.App.FrontEnd.Pages.ListPacienteModel
+@{
+}
+<h1>Gestionar Pacientes</h1>
+<a class="btn btn-primary table-btn" asp-page="./AddPaciente">Agregar paciente</a>
+<table class="table table-striped">
+<tr>
+    <th scope="col">Cedula</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Genero</th>
+    <th scope="col">Edad</th>
+    <th scope="col">Longitud</th>
+    <th scope="col">Latitud</th>
+    <th scope="col">Medico</th>
+    <th scope="col">Familiar</th>
+    <th scope="col">Enfermera</th>
+    <th scope="col">Acciones</th>
+</tr>
+@foreach(var paciente in Model.pacientes){
+    <tr>
+        <td>@paciente.cedula</td>
+        <td>@paciente.nombre</td>
+        <td>@paciente.genero</td>
+        <td>@paciente.edad</td>
+        <td>@paciente.latitud</td>
+        <td>@paciente.longitud</td>
+        <td>@if(paciente.medico== null){ @Model.mensaje }
+            else{ @paciente.medico.nombre}</td>
+        <td>@if(paciente.familiar==null){ @Model.mensaje} else{ @paciente.familiar.nombre;}</td>
+        <td>@if(paciente.enfermera == null){ @Model.mensaje} else{ @paciente.enfermera.nombre;}</td>
+        <td><a class="btn btn-primary table-btn" asp-page="./DetailPaciente" asp-route-cedula="@paciente.cedula">Detalles</a>
+        <a class="btn btn-primary table-btn" asp-page="./EditPaciente" asp-route-cedula="@paciente.cedula">Editar</a>
+        <a class="btn btn-primary table-btn" asp-page="./RemovePaciente" asp-route-cedula="@paciente.cedula">Eliminar</a>
+        </td>
+    </tr>
+}
+</table>
