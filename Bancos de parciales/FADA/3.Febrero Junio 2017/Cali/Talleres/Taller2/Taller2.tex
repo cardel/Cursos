@@ -1,0 +1,176 @@
+\documentclass[twocolumn]{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{ragged2e}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{float}
+
+\definecolor{naranja}{rgb}{1,0.5,0} % valores de las componentes roja, verde y azul (RGB)
+\definecolor{rojo}{rgb}{1,0,0}
+\definecolor{SteelBlue}{rgb}{0.3,0.5,0.7}
+\definecolor{violet}{rgb}{0.5,0,1}
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{textcomp}
+
+\lstset{ %
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=left,
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  extendedchars=true,
+  inputencoding=utf8, 
+    tabsize=8,
+    aboveskip=5pt,
+    upquote=true,
+    showstringspaces=false,
+    frame=single,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color{blue}\ttfamily\bfseries,
+    stringstyle=\color{red}\ttfamily,
+    commentstyle=\color{violet}\ttfamily,
+    morecomment=[l][\color{magenta}]{\#},  
+    literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {'}{{'}}1 {ñ}{{\~n}}1 {&}{{\&}}1 , 
+}
+\usepackage{anysize} 
+\marginsize{1cm}{1cm}{1cm}{2cm} 
+\let\olditemize\itemize
+\let\oldenumerate\enumerate
+\def\itemize{\olditemize\itemsep=0pt } %%Reducir espacio itemize
+\def\enumerate{\oldenumerate\itemsep=0pt } %%Reducir espacio itemize
+\setlength{\tabcolsep}{12pt}
+\setlength{\columnsep}{20pt}
+\title{\vspace{-2cm} \includegraphics[scale=0.2]{univalle.jpg} \\Segundo Taller\\ FUNDAMENTOS DE ANALISIS Y DISEÑO DE ALGORITMOS \vspace{-0.5cm}}
+\author{Carlos Andres Delgado S, Ing \footnote{ carlos.andres.delgado@correounivalle.edu.co }}
+\date{\vspace{-0.2cm}Marzo 2017}
+
+
+\newcommand{\raya}{\underline{\hspace{3cm}}}
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+\begin{document}
+\maketitle
+
+ 
+\section{Análisis de algoritmos}
+
+Dar la complejidad en términos de $O(f(n))$ y analizar el mejor caso, caso promedio y peor caso. Suponga que $n>0$. En el caso de los algoritmos iterativos, analizar: estado, estado inicial, transformación de estados, estado final e invariante de ciclo.
+
+Los siguientes algoritmos iterativos :
+
+\begin{lstlisting}
+//a: arreglo de tamaño n
+//n: tamaño del arreglo a
+//Primera posición arreglos es 0
+algoritmo1(a, n)
+   i = 0
+   b = 0
+
+   while(i < n)   
+          j = 0         
+          while(j < n)
+          	s = a[j]
+          	b = b + b*i
+            while(a[i] < a[j])
+               t = a[j]
+               a[j] = a[i]
+               a[i] = t
+            end
+            j++
+          end
+          i++
+   end
+   
+   print b
+end
+\end{lstlisting}
+
+\begin{lstlisting}
+algoritmo2(n)
+   b = 0
+   c = 1
+   j = n
+   while j >= 2
+       a = b
+       b = c
+       c = b + a
+       j--
+   end   
+   print c 
+\end{lstlisting}
+
+Los siguientes algoritmos recursivos.
+
+\begin{lstlisting}
+algoritmo3(n)
+    if n == 0
+        return 1
+    else
+        return algoritmo3(n-1) + algoritmo3(n-1) + algoritmo3(n-1)
+\end{lstlisting}
+\newpage
+\begin{lstlisting}
+//a es un arreglo de tamaño n
+algoritmo4(a,n)
+   if n == 0 return a
+   else
+      n--
+      B = ordenar(a,n)
+      return algoritmo(B,n-1)
+   end
+end
+
+ordenar(a,n)
+     i = 1
+     x = a[0]
+     while i < n
+        if(a[i]>x)
+          t = a[i-1]
+          a[i-1] = a[i]
+          a[i] = t 
+          x = a[i]
+        
+        i++
+     end
+end
+\end{lstlisting}
+
+\section{Ecuaciones de recurrencia}
+
+Para todos los casos suponga que $T(1) = O(1)$ \\\\
+
+Resolver utilizando método de árboles, basta con dejar expresada la sumatoria en los casos que no la pueda solucionar.
+
+\begin{itemize}
+	\item $T(n) = 4T(\frac{n}{4}) + n + 2$
+	\item $T(n) = 2T(\frac{n}{4}) + n^2$
+	\item $T(n) = 2T(\frac{n}{2}) + log(n)$ 
+\end{itemize}
+
+Resolver utilizando método de sustitución.
+
+\begin{itemize}
+	\item $T(n) = T(n) = 2T(n-1) + 4$, es $O(2^n)$
+	\item $T(n) = 2T(\frac{n}{2}) + 3n$ es $O(nlog(n))$
+\end{itemize}
+
+
+Resolver utilizando método del maestro
+
+
+\begin{itemize}
+	\item $T(n) = 4T(\frac{n}{4}) + n + 2$
+	\item $T(n) = 4T(\frac{n}{2}) + 2n$
+	\item $T(n) = 2T(\frac{n}{4}) + n^2$
+\end{itemize}
+
+
+
+\end{document}

@@ -1,0 +1,123 @@
+\documentclass[9pt,twocolumn]{article}
+\usepackage[utf8]{inputenc} %Para configuración de caracteres
+\usepackage[spanish]{babel} %Para configuración de idioma
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\lstset{ %
+  language=C++,
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=none,
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  extendedchars=true,
+  inputencoding=utf8, 
+  tabsize=4,
+  aboveskip=5pt,
+  upquote=true,
+  showstringspaces=false,
+  frame=single,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  keywordstyle=\color{blue}\ttfamily\bfseries,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color{violet}\ttfamily,
+  morecomment=[l][\color{magenta}]{\#}, 
+  escapechar=¡,
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {'}{{'}}1, 
+}
+\lstset{emph={print
+  },emphstyle={\color{blue}\ttfamily\bfseries}%
+}
+\lstset{emph={%  
+    end%
+    },emphstyle={\color{blue}\ttfamily\bfseries}%
+}%
+
+\usepackage{anysize} 
+\marginsize{1cm}{2cm}{1cm}{2cm} 
+
+\title{\vspace{-2.5cm} \includegraphics[scale=0.15]{univalle.jpg} \\Primer examen opcional \\ Fundamentos de análisis y diseño de algoritmos \\ \vspace{-0.5cm}}
+\author{Carlos Andres Delgado S, Ing \footnote{ carlos.andres.delgado@correounivalle.edu.co }}
+\date{\vspace{-0.2cm}15 de Noviembre 2017}
+
+
+\newcommand{\raya}{\underline{\hspace{3cm}}}
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+\begin{document}
+\maketitle
+\vspace{-0.5cm}
+%{\bf Nombre:\underline{\hspace{6cm}}}
+%\hfill
+%{\bf Código:\raya}
+%\\
+\textbf{Importante:} Se debe escribir el procedimiento realizado en cada punto, con sólo presentar la respuesta, el punto no será válido.
+
+
+
+\section{Divide y vencerás \small{[35 puntos]}} 
+
+
+Dado un vector de puntos en un sistema de dos dimensiones, Encontrar el punto cuya distancia al punto (0,0) sea la menor. Ejemplo $\{(0,5),(1,2),(3,6),(2,7)\}$ Si calculamos la distancia de los elementos al puntos $(0,0)$ tenemos: $\{5,2.23,6.7,7.2\}$ ordenando de acuerdo a la distancia tenemos $\{(1,2),(0,5),(3,6),(2,7)\}$ Entonces el punto más cercano es $(1,2)$
+
+\begin{itemize}
+	\item (5 puntos) Indique la solución ingenua al problema.
+	\item (20 puntos) Estrategia de dividir, vencer (solución trivial), y combinar. Muestre un ejemplo de solución del problema con un vector de tamaño 6.
+	\item (10 puntos) Calculo de la complejidad computacional de la solución utilizando divide y vencerás. Explique cómo realiza este proceso. Compare este resultado contra la complejidad de la solución ingenua y una solución que consiste en ordenar de acuerdo a la distancias y escoger el primero. ¿Cual de las tres soluciones escoge y porqué?
+\end{itemize}
+
+\section{Computación iterativa \small{[30 puntos]}} 
+
+\begin{lstlisting}[numbers=left]
+//Para n > 0
+algoritmo(n)
+	i = 0
+	res = 0
+	
+	while(i<n)
+		j = i
+		
+		while(j<2n)
+			res += 3
+			j++
+		end		
+		
+		res += 5
+		i++
+	end
+end
+\end{lstlisting} 
+
+\begin{enumerate}
+	\item \textbf{\textbf{(15 puntos)}} Complejidad computacional. Muestre cuantas veces se ejecuta cada línea en términos de $n$
+	\item \textbf{\textbf{(20 puntos)}} Invariante de ciclo para ciclos interno y externo. Indique cómo es la forma de los estados inicial, final y la transformación de estados. Demuestre la invariante de ciclo con respecto a estos. 
+\end{enumerate}
+\section{Crecimiento de funciones \small{[35 puntos]}} 
+
+Dado que $f(n)$ y $g(n)$ son funciones positivas y crecientes, para $n\geq 0$. Demostrar o refutar las siguientes conjeturas para todo  $f(n)$ y $g(n)$
+
+\begin{itemize}
+	\item $f(n) = O(g(n))$ entonces $g(n)=O(f(n))$ 
+	\item $f(n) = O(f(\frac{n}{2}))$ 
+	\item $f(n) + o(f(n)) = \Theta(f(n))$
+	\item $f(n) = \Theta((f(n))^2)$
+	\item $f(n) = O(g(n))$ implica $g(n) = \Omega(f(n))$
+\end{itemize}
+
+
+\section*{Ayudas}
+\begin{tabular}{ccc}
+ $\sum \limits_{k=1}^n c = cn$ & $\sum \limits_{k=1}^n k = \frac{n(n+1)}{2}$ & $\sum \limits_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}$ \\
+  \multicolumn{3}{c}{$\sum \limits_{k=0}^n ar^k = \frac{ar^{(n+1)}-a}{r-1}$ Si $r \neq 1$ } \\
+ \multicolumn{3}{c}{$\sum \limits_{k=0}^n ar^k = (n+1)a$ Si $r = 1$ } 
+\end{tabular}
+
+\end{document}

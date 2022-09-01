@@ -1,0 +1,101 @@
+\documentclass[twocolumn]{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{ragged2e}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{float}
+
+\definecolor{naranja}{rgb}{1,0.5,0} % valores de las componentes roja, verde y azul (RGB)
+\definecolor{rojo}{rgb}{1,0,0}
+\definecolor{SteelBlue}{rgb}{0.3,0.5,0.7}
+\definecolor{violet}{rgb}{0.5,0,1}
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{textcomp}
+
+\lstset{ %
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=left,
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  extendedchars=true,
+  inputencoding=utf8, 
+    tabsize=8,
+    aboveskip=5pt,
+    upquote=true,
+    showstringspaces=false,
+    frame=single,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color{blue}\ttfamily\bfseries,
+    stringstyle=\color{red}\ttfamily,
+    commentstyle=\color{violet}\ttfamily,
+    morecomment=[l][\color{magenta}]{\#},  
+    literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {'}{{'}}1 {ñ}{{\~n}}1 {&}{{\&}}1 , 
+}
+\usepackage{anysize} 
+\marginsize{1cm}{1cm}{1cm}{2cm} 
+\let\olditemize\itemize
+\let\oldenumerate\enumerate
+\def\itemize{\olditemize\itemsep=0pt } %%Reducir espacio itemize
+\def\enumerate{\oldenumerate\itemsep=0pt } %%Reducir espacio itemize
+\setlength{\tabcolsep}{12pt}
+\setlength{\columnsep}{20pt}
+\title{\vspace{-2cm} \includegraphics[scale=0.2]{univalle.jpg} \\Tercer Taller: Estructuras de datos y ordenamiento\\ FUNDAMENTOS DE ANALISIS Y DISEÑO DE ALGORITMOS \vspace{-0.5cm}}
+\author{Carlos Andres Delgado S, Ing \footnote{ carlos.andres.delgado@correounivalle.edu.co }}
+\date{\vspace{-0.2cm}Abril 2017}
+
+
+\newcommand{\raya}{\underline{\hspace{3cm}}}
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+\begin{document}
+\maketitle
+
+Este taller se puede hacer en grupos de 2. Debe entregar el código fuente y un informe que contenga el análisis de complejidad de las operaciones realizadas. 
+ 
+\section{Estructuras de datos}
+
+El informe debe contener el análisis de la complejidad de los algoritmos que usted diseñe.
+
+\begin{enumerate}
+	\item Desarrolle la operación combinar(Lista L1, Lista L2) que recibe dos listas simplemente
+enlazadas, cada una ordenada ascendentemente, y devuelve una lista L3 que tiene los elementos ordenados de ambas listas. Las listas pueden tener elementos repetidos.
+	\item Un museo se guarda la información del inventario de sus obras utilizando una estructura de datos en la que el campo dato es un objeto de la clase Obra. Una Obra en el inventario tiene dos atributos nombre y cantidad.
+\begin{enumerate}
+	\item Desarrolle la operación agregarReplica, de tal forma que si no existe la obra con el nombre especificado, se crea en el inventario con cantidad 1. Si ya existe, se aumenta en 1 su cantidad.
+	\item Desarrolle la operación quitarReplica(), de tal forma que si no hay obras
+disponibles con el nombre especificado se indique con un mensaje. En caso contrario, se
+disminuye en 1 su cantidad. Si una obra llega a la cantidad 0, se elimina de la estructura de datos
+	\item Desarrolle la operación ListarReplicas() que muestra para cada obra, su nombre y la
+cantidad disponible.
+\end{enumerate}
+Para este punto justifique la elección de la estructura de datos.
+\end{enumerate}
+
+
+\section{Ordenamiento}
+
+El informe debe contener el análisis de la complejidad de ordenar considerando: mejor caso, caso promedio y peor caso.
+
+\begin{enumerate}
+	\item Implementar el algoritmo QuickSort de acuerdo a lo visto en clase. Implementar dos variantes:
+	\begin{itemize}
+		\item El pivote siempre es el primero de cada partición
+		\item El pivoto es una posición aleatoria de una lista
+	\end{itemize}
+	\item Implementar el algoritmo CountingSort de acuerdo a lo visto en clase
+	\item Implementar el algoritmo ShellSort (Investigue)
+\end{enumerate}
+
+Estos algoritmos ya están implementados en el Internet, sin embargo, haga el esfuerzo y compréndalos.
+
+
+
+\end{document}

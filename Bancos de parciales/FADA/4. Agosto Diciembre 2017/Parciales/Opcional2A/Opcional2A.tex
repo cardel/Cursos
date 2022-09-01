@@ -1,0 +1,134 @@
+\documentclass[9pt,twocolumn]{article}
+\usepackage[utf8]{inputenc} %Para configuración de caracteres
+\usepackage[spanish]{babel} %Para configuración de idioma
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\lstset{ %
+  language=C++,
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=none,
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  extendedchars=true,
+  inputencoding=utf8, 
+  tabsize=4,
+  aboveskip=5pt,
+  upquote=true,
+  showstringspaces=false,
+  frame=single,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  keywordstyle=\color{blue}\ttfamily\bfseries,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color{violet}\ttfamily,
+  morecomment=[l][\color{magenta}]{\#}, 
+  escapechar=¡,
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {'}{{'}}1, 
+}
+\lstset{emph={print
+  },emphstyle={\color{blue}\ttfamily\bfseries}%
+}
+\lstset{emph={%  
+    end%
+    },emphstyle={\color{blue}\ttfamily\bfseries}%
+}%
+
+\usepackage{anysize} 
+\marginsize{1cm}{2cm}{1cm}{2cm} 
+
+\title{\vspace{-2.5cm} \includegraphics[scale=0.15]{univalle.jpg} \\Segundo examen opcional - versión A \\ Fundamentos de análisis y diseño de algoritmos \\ \vspace{-0.5cm}}
+\author{Carlos Andres Delgado S, Ing \footnote{ carlos.andres.delgado@correounivalle.edu.co }}
+\date{\vspace{-0.2cm}20 de Diciembre 2017}
+
+
+\newcommand{\raya}{\underline{\hspace{3cm}}}
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+\begin{document}
+\maketitle
+\vspace{-0.5cm}
+%{\bf Nombre:\underline{\hspace{6cm}}}
+%\hfill
+%{\bf Código:\raya}
+%\\
+\textbf{Importante:} Se debe escribir el procedimiento realizado en cada punto, con sólo presentar la respuesta, el punto no será válido. La complejidad temporal debe ser dada en términos de $O(f(n))$, con la cota $f(n)$ más ajustada posible.
+
+
+
+\section{Ordenamiento \small{[50 puntos]}} 
+
+Se desea ordenar un conjunto de números entre 1 y $n^2$ distribuidos de forma uniforme, es decir que no tenemos números preferidos dentro del conjunto, todos tienen la misma posibilidad de aparece en el conjunto. Se tienen los siguientes algoritmos de ordenamiento:
+
+\subsection*{Algoritmo A}
+\begin{lstlisting}
+para i=0 hasta n-1
+    mínimo = i;
+    para j=i+1 hasta n
+        si arreglo[j] < arreglo[mínimo] entonces
+            mínimo = j 
+        fin si
+    fin para
+    intercambiar(arreglo[i], arreglo[mínimo])
+fin para
+\end{lstlisting}
+
+\subsection*{Algoritmo B}
+\begin{lstlisting}
+mientras arreglo no esté ordenado
+	reordenar_aleatoriamente(arreglo)
+fin mientras
+\end{lstlisting}
+
+\subsection*{Algoritmo C}
+
+\begin{lstlisting}
+algoritmoC(Arreglo,i,j)
+	si Arreglo[i] > Arreglo[j] entonces
+		intercambiar(Arreglo[i],Arreglo[j])
+	fin si 
+
+	si (j - i + 1) > 2 entonces
+		 t = (j - i + 1) / 3
+         algoritmoC(Arreglo, i  , j-t)
+         algoritmoC(Arreglo, i+t, j  )
+         algoritmoC(Arreglo, i  , j-t)
+	fin si
+
+	retornar Arreglo
+		
+fin
+
+algoritmoC(Arreglo,1,n)
+\end{lstlisting}
+
+
+\begin{enumerate}
+	\item \textbf{[10 puntos]} Calcule la complejidad del algoritmo A, para mejor, caso promedio y peor caso. Explique el proceso que realiza para calcularla.
+	\item \textbf{[10 puntos]} Calcule la complejidad del algoritmo B, para mejor, caso promedio y peor caso. Explique el proceso que realiza para calcularla.
+	\item \textbf{[15 puntos]} Calcule la complejidad del algoritmo C, para mejor, caso promedio y peor caso. Explique el proceso que realiza para calcularla.
+
+	\item \textbf{[15 puntos]} Si existe una mejor solución argumente porque. Si no, sustente claramente porque.
+\end{enumerate}
+
+\section{Programación dinámica y voraz \small{[50 puntos]}} 
+
+Un amigo suyo cuenta con un presupuesto $K$ y se dirige a una tienda, la cual tiene con conjunto de productos, cuyos precios son $p=\{p_1,p_2,...,p_n\}$. Usted debe diseñar una solución para que su amigo pueda comprar la mayor cantidad de productos posible sin exceder su presupuesto.
+
+\begin{enumerate}
+	\item \textbf{[10 puntos]} Indique cómo es la solución ingenua de este problema y su complejidad 
+	\item \textbf{[10 puntos]} Identifique la estrategia divide y vencerás de este problema ¿Como dividimos? ¿Cual es la solución trivial? ¿Cómo combinamos las soluciones de los subproblemas?
+	\item \textbf{[20 puntos]} Especifique la solución dinámica de este problema. Recuerde 1) Caracterizar si es un problema de programación dinámica 2) Especificar la estructura de memorización 3) Plantear cómo se va llenar esta estructura 4) ¿Como se calcula la solución a partir de lo realizado en 3?. Muestre cómo se solucionaría un ejemplo con 6 productos. Calcule la complejidad de su solución.
+	\item \textbf{[10 puntos]} Especifique la solución voraz de su problema. Calcule su complejidad
+\end{enumerate}
+
+
+
+\end{document}

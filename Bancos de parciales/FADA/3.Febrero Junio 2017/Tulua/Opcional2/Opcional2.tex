@@ -1,0 +1,118 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[utf8]{inputenc} %Para configuración de caracteres
+\usepackage[spanish]{babel} %Para configuración de idioma
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\lstset{ %
+  language=C++,
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=none,
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  extendedchars=true,
+  inputencoding=utf8, 
+  tabsize=4,
+  aboveskip=5pt,
+  upquote=true,
+  showstringspaces=false,
+  frame=single,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  keywordstyle=\color{blue}\ttfamily\bfseries,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color{violet}\ttfamily,
+  morecomment=[l][\color{magenta}]{\#}, 
+  escapechar=¡,
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {'}{{'}}1, 
+}
+\lstset{emph={print
+  },emphstyle={\color{blue}\ttfamily\bfseries}%
+}
+%\lstset{emph={%  
+%    lambda, define, empty, number, cadr, caddr, if, else, iszero, define-datatype, pair, symbol, eqv,car, cdr, cases, sllgen, %skip, in, then%
+%    },emphstyle={\color{blue}\ttfamily\bfseries}%
+%}%
+
+\usepackage{anysize} 
+\marginsize{2cm}{2cm}{1cm}{2cm} 
+
+\title{\vspace{-2.5cm} \includegraphics[scale=0.15]{univalle.jpg} \\Segundo examen opcional \\ Fundamentos de análisis y diseño de algoritmos \\ \vspace{-0.5cm}}
+\author{Carlos Andres Delgado S, Ing \footnote{ carlos.andres.delgado@correounivalle.edu.co }}
+\date{\vspace{-0.2cm}01 de Julio 2017}
+
+
+\newcommand{\raya}{\underline{\hspace{3cm}}}
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+\begin{document}
+\maketitle
+\vspace{-0.5cm}
+{\bf Nombre:\underline{\hspace{6cm}}}
+\hfill
+{\bf Código:\raya}
+
+\section{Estructuras de datos \small{[40 puntos]}} 
+
+\begin{enumerate}
+	\item \textbf{(10 puntos)} Utilizando pilas, colas y listas, diseñe un algoritmo que recibe una lista de números enteros, la cual los números negativos en orden inverso a como estaban al principio. Calcule la complejidad de su solución considerando la complejidad de las operaciones de las estructuras que usted elija.
+
+
+\item Indicar cuales de las siguientes afirmaciones son verdaderas o falsas \textbf{justificando}
+\begin{enumerate}
+\item \textbf{(5 puntos)}  Estructura \textbf{Tablas Hash}
+  \begin{enumerate}
+  \item Es \'util cuando el numero de \textbf{slots m} es superior o igual al n\'umero de llaves a almacenar
+  \item Si ${\bf n=K}$ y ${\bf m=\frac{K^2}{4}}$ la complejidad de una {\bf búsqueda}{\it (exitosa o no)} es $\Theta(n)$
+  \end{enumerate}
+\item \textbf{(5 puntos)}  Estructura \textbf{Arboles de b\'usqueda binaria}
+  \begin{enumerate}
+  \item La complejidad de \textbf{Tree\_Delete} es ${\cal O} (lg n)$
+  \item La complejidad de \textbf{Tree\_Succesor} es ${\cal O} (lg n)$
+  \end{enumerate}
+
+\item \textbf{(10 puntos)} Estructura \textbf{Arboles rojinegros}
+  \begin{enumerate}
+  \item Su altura m\'axima con $p$ nodos almacenados es $p$
+  \item Las rotaciones tienen complejidad ${\Theta (n)}$ por las reacomodos que se deben realizar
+  \end{enumerate}
+\end{enumerate}
+	\item \textbf{(5 puntos)} El siguiente es un \'arbol rojinegro {\bf T} v\'alido cuyos nodos se indican de la forma {\it \{$key^{color}$,subIzq,subDer\}}.
+  {\bf T}=$\{\{100^{N},50,200\},\{50^{R},35,70\},\{200^{N},120,300\},$\\
+  $\{\{35^{R},nil,nil\},\{70^{N},60,nil\},\{120^{R},nil,nil\},$\\
+  $\{\{300^{R},nil,nil\},\{60^{R},nil,nil\}\}$\\ En caso de no serlo indicar el por que.
+  \item \textbf{(5 puntos)} ¿Cual es el mejor y peor caso de las operaciones buscar e insertar en un arbol binario de búsqueda? Explique claramente cada situación.
+\end{enumerate}
+
+\section{Programación dinámica \small{[40 puntos]}} 
+
+Un palíndromo es una cadena de caracteres no vacía sobre algún alfabeto, la cual se puede leer igual de derecha a izquierda que de izquierda a derecha. Ejemplos de palíndromos son todas las cadenas de caracteres de tamaño 1, \textit{civic}, \textit{racecar} y \textit{aibohphobia}. Diseñe un algoritmo que para cualquier entrada de cadena de caracteres retorne la(s) secuencia(s) más larga(s) que es palíndromo.
+
+\begin{enumerate}
+	\item \textbf{(5 puntos)} ¿Cual es la complejidad de la solución ingenua? Justifique.
+	\item \textbf{(35 puntos)} Aplicando los 4 pasos vistos en clase plantee una solución dinámica para este problema. Calcule la complejidad de esta solución y muestre claramente cómo se solucionaría con este algoritmo un instancia de 7 caracteres.
+\end{enumerate}
+\section{Programación voraz \small{[20 puntos]}} 
+
+
+Considere $n$ archivos de tamaños $\{m_{1},m_ {2},...,m_{n}\}$. El problema del almacenamiento óptimo de cinta consiste en encontrar el mejor orden para almacenar los archivos en la cinta de manera que la lectura de los mismos sea la menos costosa. Debe tenerse en cuenta
+	\begin{itemize}
+		\item La lectura de cada archivo comienza con la cinta completamente devuelta.
+		\item Cada lectura en un archivo toma un tiempo igual a la longitud de los archivos procedentes
+		\item Los archivos son leídos en orden inverso al que son almacenados.
+	\end{itemize}
+
+Plantee una solución voraz para este problema y calcule su complejidad.
+
+\begin{center}
+	\huge{¡Exitos!}
+\end{center}	
+	
+\end{document}

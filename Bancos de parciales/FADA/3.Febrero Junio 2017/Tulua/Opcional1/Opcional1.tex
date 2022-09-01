@@ -1,0 +1,164 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[utf8]{inputenc} %Para configuración de caracteres
+\usepackage[spanish]{babel} %Para configuración de idioma
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\lstset{ %
+  language=C++,
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=none,
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  extendedchars=true,
+  inputencoding=utf8, 
+  tabsize=4,
+  aboveskip=5pt,
+  upquote=true,
+  showstringspaces=false,
+  frame=single,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  keywordstyle=\color{blue}\ttfamily\bfseries,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color{violet}\ttfamily,
+  morecomment=[l][\color{magenta}]{\#}, 
+  escapechar=¡,
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {'}{{'}}1, 
+}
+\lstset{emph={print
+  },emphstyle={\color{blue}\ttfamily\bfseries}%
+}
+%\lstset{emph={%  
+%    lambda, define, empty, number, cadr, caddr, if, else, iszero, define-datatype, pair, symbol, eqv,car, cdr, cases, sllgen, %skip, in, then%
+%    },emphstyle={\color{blue}\ttfamily\bfseries}%
+%}%
+
+\usepackage{anysize} 
+\marginsize{2cm}{2cm}{1cm}{2cm} 
+
+\title{\vspace{-2.5cm} \includegraphics[scale=0.15]{univalle.jpg} \\Primer examen opcional \\ Fundamentos de análisis y diseño de algoritmos \\ \vspace{-0.5cm}}
+\author{Carlos Andres Delgado S, Ing \footnote{ carlos.andres.delgado@correounivalle.edu.co }}
+\date{\vspace{-0.2cm}01 de Julio 2017}
+
+
+\newcommand{\raya}{\underline{\hspace{3cm}}}
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+\begin{document}
+\maketitle
+\vspace{-0.5cm}
+{\bf Nombre:\underline{\hspace{6cm}}}
+\hfill
+{\bf Código:\raya}
+
+
+\section{Ecuaciones de recurrencia \small{[10 puntos]}} 
+
+ Utilizando el método de árboles, solucione la siguiente ecuación de recurrencia
+	\begin{align*}
+	      T(n) = 4T(\frac{n}{3}) + n, T(1) = O(n^3)
+	\end{align*}	
+
+
+\section{Divide y vencerás \small{[20 puntos]}} 
+
+Diseñe un algoritmo mediante la técnica de divide y vencerás para encontrar el mayor y el segundo mayor elemento en una lista. Indique la complejidad de este algoritmo.
+
+\section{Ordenamiento \small{[10 puntos]}} 
+
+Indique un algoritmo para ordenar números  entre 1 y $n^3$ que se encuentran distribuidos uniformemente en tiempo $O(n)$.
+
+\section{Computación iterativa \small{[60 puntos]}} 
+
+\begin{enumerate}
+	\item (20 puntos) Indique la complejidad computacional en términos de $O(f(n))$ con el $f(n)$ más pequeño posible, de los siguientes algoritmos:
+
+\begin{lstlisting}
+//Para n > 2
+for(int i=2; i<n; i=i*i){
+	for(int j=0; j<n*n; j++){
+		//...	
+	}
+}
+\end{lstlisting} 
+\begin{lstlisting}
+//Para n >= 0
+for(int i=2n; i>=0; i--){
+	for(int j=0; j<4n; j=j+2){
+		//...	
+	}
+}
+\end{lstlisting} 	
+\begin{lstlisting}
+//Para n >= 0
+for(int i=0; i<=n; i++){
+	for(int j=i; j<=8n; j=j++){
+		//...	
+	}
+}
+\end{lstlisting} 	
+
+	\item (20 puntos) Para el siguiente algoritmo indique:
+	\begin{itemize}
+		\item Forma de estado, estado inicial
+		\item Transformación de estados y estado final
+		\item Invariante de ciclo
+	\end{itemize}
+\begin{lstlisting}[language=Java]
+Algoritmo(int N)
+{
+	int i,res;
+	i = -6;
+	res = 1;	
+	
+	while(i<=N*N){
+		
+		res = res + 3*i;
+		
+		for(int j=0; j<=2N; j+=2)
+		{
+			res = 2*res+i;
+		}
+		i++;
+	}
+}
+\end{lstlisting} 
+	\item (20 puntos)Para el siguiente algoritmo, el cual recibe un arreglo A y su tamaño n.
+
+\begin{lstlisting}[language=Java]
+Algoritmo2(int A[], int n)
+{
+	int res = 0;
+	for(int i=0; i<n; i++){
+		if(A[i] % 2 == 0){
+			for(int j=i; j<=n*n; j++)}{
+				res = res+A[i];	
+			}
+		}
+		else{
+			res = res+2+A[i];	
+
+		}
+	}
+}
+\end{lstlisting} 
+En términos de $O(f(n))$ con el $f(n)$ más pequeño posible, indique la complejidad del algoritmo para:
+\begin{itemize}
+	\item Mejor caso
+	\item Peor caso
+	\item Caso promedio
+\end{itemize}
+	\end{enumerate}
+\begin{center}
+	\huge{¡Exitos!}
+\end{center}	
+	
+\end{document}

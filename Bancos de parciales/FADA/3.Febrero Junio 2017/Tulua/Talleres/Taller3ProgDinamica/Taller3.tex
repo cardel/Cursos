@@ -1,0 +1,103 @@
+\documentclass[twocolumn, letterpaper]{article}
+
+\usepackage[utf8]{inputenc} %Para configuración de caracteres
+\usepackage[spanish]{babel} %Para configuración de idioma
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\let\olditemize\itemize
+\def\itemize{\olditemize\itemsep=0pt } %%Reducir espacio itemize
+\usepackage{xcolor}
+
+\usepackage{listings}
+\usepackage{listingsutf8}
+\lstset{ %
+  basicstyle=\footnotesize,           % the size of the fonts that are used for the code
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                   % show the filename of files included with \lstinputlisting;{}
+  extendedchars=false,
+  inputencoding=utf8, 
+}
+\let\olditemize\itemize
+\def\itemize{\olditemize\itemsep=0pt } %%Reducir espacio itemize
+
+\usepackage{anysize} 
+\marginsize{2cm}{2cm}{1cm}{2cm} 
+
+\title{	\vspace{-2cm}\includegraphics[scale=0.2]{univalle.jpg} \\ Taller 3 \\FUNDAMENTOS DE ANÁLISIS Y DISEÑO DE ALGORITMOS}
+\author{Carlos Andres Delgado S, Ing \footnote{ carlos.andres.delgado@correounivalle.edu.co }}
+\date{Junio 2017}
+
+\begin{document}
+\maketitle
+
+Este taller se puede trabajar en grupos de hasta 2 personas.
+
+\section{Problemas}
+
+
+\begin{enumerate}
+%	\item \textbf{Subsecuencias mas largas de un palindromo} Un palindromo es una cadena de caracteres no vacía sobre algún alfabeto, la cual se puede leer igual de derecha a izquierda que de izquierda a derecha. Ejemplos de palindromos son todas las cadenas de caracteres de tamaño 1, \textit{civic}, \textit{racecar} y \textit{aibohphobia}. Obtenga un algoritmo eficiente que para cualquier entrada de cadena de caracteres retorne la(s) secuencia(s) más larga(s) que es palindromo. Su solución no debe es sensible a si el carácter está mayúsculas o minúsculas; las comas, puntos, puntos y coma, espacios, tabuladores y otros caracteres especiales son ignorados. 
+%	\\\\	
+%	Ejemplo: \textit{Llego a tierra y le dijo: Dabale arroz a la zorra el abad, ella aceptó} en este caso la respuesta debe ser \textit{Dabale arroz a la zorra el abad}
+	\item \textbf{Planeando una fiesta de la compañía} En una compañía se está planeando una fiesta. La compañía tiene una estructura jerárquica, donde existen relaciones donde un supervisor es el nodo padre de alguien que supervisa, por lo que el presidente de la compañía esta en la raíz del árbol que representa la estructura de la empresa. Cada empleado tiene una calificación de convivencia, la cual es un número natural. El presidente de la empresa requiere que en la lista de invitados no se encuentren un empleado con su respectivo supervisor. Diseñe un algoritmo que permita maximizar la suma de la convivencia de los invitados de la fiesta cumpliendo los requerimientos del presidente.
+%	\item {\textbf{Conversión de cadenas} Sean $u$ y $v$ dos cadenas de caracteres. Se desea transformar $u$ en $v$ con el mínimo número de operaciones elementales del tipo siguiente:
+%		\begin{enumerate}
+%			\item Eliminar un carácter en cualquier posición.
+%			\item Añadir un carácter al final.
+%			\item Cambiar un carácter en cualquier posición.
+%		\end{enumerate}
+%	Por ejemplo, para pasar de la cadena $ababc$ a $bccba$ podríamos hacer:
+%		\begin{enumerate}
+%			\item $ababc \rightarrow $(eliminar a en primer posición)
+%			\item $babc \rightarrow bcabc$ (añadir c el final).
+%			\item $bcabc \rightarrow bccbc $ (cambiar a por c en posición 3).
+%			\item $bccbc \rightarrow bccba$ (cambiar c por a en posición 5).
+%		\end{enumerate}	}
+	\item \textbf{Planificar una estrategia de inversión} Usted cuenta con 100.000 pesos y desea invertirlo buscando maximizar el retorno a 10 años. Usted decide invertir de acuerdo a las siguientes reglas:
+	\begin{enumerate}
+		\item Usted puede invertir en varias opciones, numeradas desde $1$ hasta $n$
+		\item En cada año $j$, cada opción $i$ provee una ganancia de $r_{ij}$. En otras palabras si usted invierte $s$ pesos en la opción $i$ en el año $j$, al final de este año, se obtienen $s*r_{ij}$ pesos. 
+		\item El retorno está garantizado para los proximos 10 años de cada inversión.
+		\item Al final de cada año, usted puede dejar el dinero en las mismas inversiones o cambiarlas. Sin embargo, sólo puede tomar una decisión al año.
+		\item Si usted no mueve su dinero de una inversión entre dos años consecutivos se paga un impuesto $i_1$ y si los mueve paga un impuesto $i_2$, donde $i_1 < i_2$
+\end{enumerate}				
+\end{enumerate}
+
+\section{Calificación}
+
+Debe entregar un informe en formato PDF que contenga:
+
+\begin{enumerate}
+	\item {20\% Entendimiento del problema. Se solicita:
+		\begin{enumerate}
+			\item Representación de entradas y salidas.
+			\item Salida del problema ante una entrada que usted seleccione.
+			\item Estudio de su complejidad en términos de $O(f(n))$.
+		\end{enumerate}			
+	}
+	\item {50\% Solución dinámica del problema y estudio de su complejidad espacial y temporal en términos de $O(f(n))$. Para este punto usted debe explicar:
+	\begin{enumerate} 
+		\item Definición formal de la solución dinámica
+		\item Definición de la estructura óptima
+		\item Mostrar el proceso de solución del problema con un ejemplo pequeño.
+	\end{enumerate}}
+	\item 30\% Implementación que debe cumplir:
+\begin{enumerate}
+	\item Debe permitir ingresar entradas al problema bajo un formato especificado por el estudiante.
+	\item Debe desplegar las salidas del problema
+\end{enumerate}	
+
+\end{enumerate}
+
+
+
+
+
+
+\end{document}

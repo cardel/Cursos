@@ -1,0 +1,111 @@
+\documentclass[9pt,twocolumn]{article}
+\usepackage[utf8]{inputenc} %Para configuración de caracteres
+\usepackage[spanish]{babel} %Para configuración de idioma
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\lstset{ %
+  language=C++,
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=none,
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  extendedchars=true,
+  inputencoding=utf8, 
+  tabsize=4,
+  aboveskip=5pt,
+  upquote=true,
+  showstringspaces=false,
+  frame=single,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  keywordstyle=\color{blue}\ttfamily\bfseries,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color{violet}\ttfamily,
+  morecomment=[l][\color{magenta}]{\#}, 
+  escapechar=¡,
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {'}{{'}}1, 
+}
+\lstset{emph={print
+  },emphstyle={\color{blue}\ttfamily\bfseries}%
+}
+\lstset{emph={%  
+    end%
+    },emphstyle={\color{blue}\ttfamily\bfseries}%
+}%
+
+\usepackage{anysize} 
+\marginsize{1cm}{2cm}{1cm}{2cm} 
+
+\title{\vspace{-2.5cm} \includegraphics[scale=0.15]{univalle.jpg} \\Segundo examen parcial \\ Fundamentos de análisis y diseño de algoritmos \\ \vspace{-0.5cm}}
+\author{Carlos Andres Delgado S, Ing \footnote{ carlos.andres.delgado@correounivalle.edu.co }}
+\date{\vspace{-0.2cm}6 de Diciembre 2017}
+
+
+\newcommand{\raya}{\underline{\hspace{3cm}}}
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+\begin{document}
+\maketitle
+\vspace{-0.5cm}
+%{\bf Nombre:\underline{\hspace{6cm}}}
+%\hfill
+%{\bf Código:\raya}
+%\\
+\textbf{Importante:} Se debe escribir el procedimiento realizado en cada punto, con sólo presentar la respuesta, el punto no será válido.
+
+
+
+\section{Ordenamiento \small{[30 puntos]}} 
+
+\begin{enumerate}
+	\item \textbf{[10 puntos]} Un estudiante argumenta que tiene una implementación de las operaciones insertar, maximo y retirar-maximo de un montículo con complejidad O(1). Argumente porque esto no es cierto. Utilice como base de su argumentación la estructura del montículo y la complejidad de las operaciones. 
+	\item \textbf{[20 puntos]} ¿Usted que haría?: Un arreglo $A$ contiene $n$ elementos, todos estos elementos son menores que n. Se desea encontrar los $m$ más pequeños, donde $m$ es menor que $n$.
+	\begin{enumerate}
+		\item Ordenar con QuickSort los elementos y tomar los primero $m$.
+		\item Comparar uno por uno y así tomar los m menores.
+		\item En caso que piense que existe otro método mejor, indíquelo.
+\end{enumerate}	 
+Explique que haría utilizando con argumento la complejidad temporal de cada solución en términos de $O(f(n))$
+\end{enumerate}
+
+\section{Programación dinámica \small{[35 puntos]}} 
+
+Un palindromo es una cadena de caracteres no vacía. La idea es encontrar el palidromo más largo de una secuencia dada. Por ejemplo: De la palabra \textbf{character} el palindromo más largo es \textbf{charac}. 
+
+\begin{enumerate}
+	\item \textbf{[10 puntos]} Indique cómo es la solución ingenua de este problema y su complejidad 
+	\item \textbf{[10 puntos]} Identifique la estrategia divide y vencerás de este problema 
+	\item \textbf{[15 puntos]} Especifique la solución dinámica de este problema. Recuerde 1) Caracterizar si es un problema de programación dinámica 2) Especificar la estructura de memorización 3) Plantear cómo se va llenar esta estructura 4) ¿Como se calcula la solución a partir de lo realizado en 3?.
+\end{enumerate}
+
+
+
+\section{Programación voraz \small{[35 puntos]}} 
+
+Considere $n$ archivos de tamaños $\{m_{1},m_ {2},...,m_{n}\}$. El problema del almacenamiento óptimo de cinta consiste en encontrar el mejor orden para almacenar los archivos en la cinta de manera que la lectura de los mismos sea la menos costosa. Debe tenerse en cuenta
+	\begin{itemize}
+		\item La lectura de cada archivo comienza con la cinta completamente devuelta.
+		\item Cada lectura en un archivo toma un tiempo igual a la longitud de los archivos procedentes
+		\item Los archivos son leídos en orden inverso al que son almacenados.
+	\end{itemize}
+	
+Ejemplo
+
+Se tiene el conjunto $A=\{10,60,30\}$, una solución posible: $A_1=\{10,60,30\}$, con costo $10+70+100=180$,  $A_2=\{10,60,30\}$, otra solución posible es:  $A_2=\{60,10,30\}$, con costo $60+70+100=230$.
+		
+	\begin{enumerate}
+		\item \textbf{[10 puntos]} Indique cómo es la solución ingenua de este problema y su complejidad 
+		\item \textbf{[10 puntos]} ¿Porque se puede plantear como un problema de divide y vencerás?. Puede explicar con un ejemplo.
+		\item \textbf{[15 puntos]} ¿Cual es la solución voraz del problema y cual es su complejidad?. Explique claramente.
+	\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,146 @@
+\documentclass[9pt,twocolumn]{article}
+\usepackage[utf8]{inputenc} %Para configuración de caracteres
+\usepackage[spanish]{babel} %Para configuración de idioma
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\lstset{ %
+  language=C++,
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=none,
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  extendedchars=true,
+  inputencoding=utf8, 
+  tabsize=4,
+  aboveskip=5pt,
+  upquote=true,
+  showstringspaces=false,
+  frame=single,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  keywordstyle=\color{blue}\ttfamily\bfseries,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color{violet}\ttfamily,
+  morecomment=[l][\color{magenta}]{\#}, 
+  escapechar=¡,
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {'}{{'}}1, 
+}
+\lstset{emph={print
+  },emphstyle={\color{blue}\ttfamily\bfseries}%
+}
+\lstset{emph={%  
+    end%
+    },emphstyle={\color{blue}\ttfamily\bfseries}%
+}%
+
+\usepackage{anysize} 
+\marginsize{1cm}{2cm}{1cm}{2cm} 
+
+\title{\vspace{-2.5cm} \includegraphics[scale=0.15]{univalle.jpg} \\Primer examen parcial \\ Fundamentos de análisis y diseño de algoritmos \\ \vspace{-0.5cm}}
+\author{Carlos Andres Delgado S, Ing \footnote{ carlos.andres.delgado@correounivalle.edu.co }}
+\date{\vspace{-0.2cm}18 de Octubre 2017}
+
+
+\newcommand{\raya}{\underline{\hspace{3cm}}}
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+\begin{document}
+\maketitle
+\vspace{-0.5cm}
+%{\bf Nombre:\underline{\hspace{6cm}}}
+%\hfill
+%{\bf Código:\raya}
+%\\
+\textbf{Importante:} Se debe escribir el procedimiento realizado en cada punto, con sólo presentar la respuesta, el punto no será válido.
+
+\section{Ecuaciones de recurrencia \small{[15 puntos]}} 
+
+ Utilizando el método de árboles o iteración, solucione la siguiente ecuación de recurrencia
+	\begin{align*}
+	      T(n) = 5T(\frac{n}{4}) + \frac{n}{2}, T(1) = O(n)
+	\end{align*}	
+
+
+\section{Divide y vencerás, y Estructuras de datos \small{[30 puntos]}} 
+
+Plantee una solución utilizando divide y vencerás, para contar el número \textbf{mínimo} de movimientos necesarios para resolver el problema de las torres de Hanoi.
+\\\\
+\textbf{Problema:} Este juego consta de $n$ discos y tres postes A,B y C. Inicialmente, el poste A tiene discos de diferente diámetro, acomodados en orden creciente (arriba está el más pequeño y abajo el más grande). La idea es mover los discos al poste B, con la regla de que en los movimientos nunca puede haber un disco más grande que el otro.
+\\\\
+\textbf{Plantee:}
+
+\begin{itemize}
+	\item Estrategia de dividir, vencer (solución trivial), y combinar
+	\item Indique una secuencia de pasos o muestre en un pseudocódigo o dibuje un diagrama de flujo para solucionar este problema en un computador. En otras palabras, piense cómo implementaría este algoritmo. \textbf{Importante:} Analice que estructuras de datos le ayudarían a solucionar este problema.
+	\item Calcule la complejidad computacional de la solución. Considere las estructuras de datos usadas.
+\end{itemize}
+
+\textbf{Pista:} Para $n=1$ se necesita 1 movimiento, para $n=2$ se necesitan 3 movimientos y para $n=3$ se necesitan 7 movimientos.
+\newpage
+\section{Complejidad computacional \small{[25 puntos]}} 
+
+Indique la complejidad computacional para las siguientes expresiones. Indique para cada linea su numero de ejecuciones en términos de n.
+
+\begin{lstlisting}[numbers=left]
+//Para n > 0
+for(int i=0; i<=n; i++){
+	for(int j=0; j<=i; j=j+2){
+		//...	
+	}
+}
+\end{lstlisting} 
+	
+\begin{lstlisting}[numbers=left]
+//Para n > 0
+for(int i=1; i<=n*n; i=2i){
+	for(int j=i; j<=n; j=j++){
+		//...	
+	}
+}
+\end{lstlisting} 
+\section{Computación iterativa \small{[30 puntos]}} 
+
+Para el siguiente algoritmo:
+
+\begin{lstlisting}
+//Para n > 0
+algoritmo(n)
+	i = 0
+	s = 0
+	
+	while(i<=2n)
+		j = 0
+		r = 4
+		
+		while(j<=8)
+			r += 2
+			j++
+		end		
+		
+		s += 2r
+		i++
+	end
+end
+\end{lstlisting} 
+
+\begin{enumerate}
+	\item \textbf{\textbf{(15 puntos)}} Invariante de ciclo para el ciclo interno y su demostración.
+	\item \textbf{\textbf{(15 puntos)}} Invariante de ciclo para el ciclo externo y su demostración
+\end{enumerate}
+
+\section*{Ayudas}
+\begin{tabular}{ccc}
+ $\sum \limits_{k=1}^n c = cn$ & $\sum \limits_{k=1}^n k = \frac{n(n+1)}{2}$ & $\sum \limits_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}$ \\
+  \multicolumn{3}{c}{$\sum \limits_{k=0}^n ar^k = \frac{ar^{(n+1)}-a}{r-1}$ Si $r \neq 1$ } \\
+ \multicolumn{3}{c}{$\sum \limits_{k=0}^n ar^k = (n+1)a$ Si $r = 1$ } 
+\end{tabular}
+
+\end{document}

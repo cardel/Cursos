@@ -1,0 +1,141 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[utf8]{inputenc} %Para configuración de caracteres
+\usepackage[spanish]{babel} %Para configuración de idioma
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\lstset{ %
+  language=C++,
+  basicstyle=\scriptsize,           % the size of the fonts that are used for the code
+  numbers=none,
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  numbersep=4pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  extendedchars=true,
+  inputencoding=utf8, 
+  tabsize=4,
+  aboveskip=5pt,
+  upquote=true,
+  showstringspaces=false,
+  frame=single,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  keywordstyle=\color{blue}\ttfamily\bfseries,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color{violet}\ttfamily,
+  morecomment=[l][\color{magenta}]{\#}, 
+  escapechar=¡,
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {'}{{'}}1, 
+}
+
+%\lstset{emph={%  
+%    lambda, define, empty, number, cadr, caddr, if, else, iszero, define-datatype, pair, symbol, eqv,car, cdr, cases, sllgen, %skip, in, then%
+%    },emphstyle={\color{blue}\ttfamily\bfseries}%
+%}%
+
+\usepackage{anysize} 
+\marginsize{2cm}{2cm}{1cm}{2cm} 
+
+\title{\vspace{-2cm} \includegraphics[scale=0.15]{univalle.jpg} \\Segundo examen parcial - Fundamentos de análisis y diseño de algoritmos \\ Duración: 2 horas \vspace{-0.5cm}}
+\author{Carlos Andres Delgado S, Ing \footnote{ carlos.andres.delgado@correounivalle.edu.co }}
+\date{\vspace{-0.2cm}17 de Junio 2017}
+
+
+\newcommand{\raya}{\underline{\hspace{3cm}}}
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+\begin{document}
+\maketitle
+\vspace{-0.2cm}
+{\bf Nombre:\underline{\hspace{6cm}}}
+\hfill
+{\bf Código:\raya}
+
+
+\section{Estructuras de datos \small{[30 puntos]}} 
+
+\begin{enumerate}
+	\item \textbf{(10 puntos)} En el procedimiento \textbf{Build-Heap}, se construye el montículo, en un ciclo desde length[A]/2 hasta 1 de manera creciente. Esto es un capricho, pues de igual forma, el montículo puede ser construido, si el ciclo fuese desde 1 hasta $lenght[A]/2$, aplicando Heapify en cada iteración. Indique si es verdadero o falso, justifique su afirmación. 
+	\item \textbf{(10 puntos)} Si se deseara que el algoritmo HeapSoft ordenara descendentemente, es suficiente con la siguiente modificación.
+\begin{lstlisting}
+HeapSoftDesc(A)
+   Build-Heap(A)
+   for i=2 to n-1
+           Heapify(A,i)
+\end{lstlisting}
+Indique si es verdadero o falso, justifique su afirmación. 
+	\item \textbf{(10 puntos)} ¿Cómo se puede implementar una cola utilizando pilas? Analice las complejidades de las operaciones.
+\end{enumerate}
+
+
+
+
+\section{Programación dinámica y voraz \small{[70 puntos]}} 
+
+\subsection{Problema del viaje más barato}
+
+Sobre el río Cauca hay $n$ embarcaderos. En cada uno de ellos se puede alquilar un bote que permite ir a cualquier otro embarcadero río abajo (es imposible ir río arriba). Existe una tabla de tarifas que indica el coste del viaje del embarcadero $i$ al $j$ para cualquier embarcadero de partida $i$ y cualquier embarcadero de llegada $j$ más abajo en el río $i < j$. Puede suceder que un viaje de $i$ a $j$ sea más
+caro que una sucesión de viajes más cortos, en cuyo caso se tomaría un primer bote hasta un embarcadero $k$ y un segundo bote para continuar a partir de $k$. No hay coste adicional por cambiar de bote. A continuación un ejemplo con 4 embarcaderos, se quiere ir de 1 a 4.
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{} & \textbf{2}  & \textbf{3}  & \textbf{4}\\
+\hline
+1 & 10 & 40 & 100 \\
+\hline
+2 & - & 20 & 80 \\
+\hline
+3 & - & - & 5 \\
+\hline
+\end{tabular}
+\end{table}
+
+La solución óptima en este caso es tomar 1 a 2 (costo 10), 2 a 3 (costo 20), 3 a 4 (Costo 5) para un costo total de 35.
+
+\subsection{Problema del cambio de monedas}
+
+Usted se encuentra administrando un pequeño negocio ubicado en la ciudad de Tulúa. Las personas le compran productos y al momento de pagar usted entrega una devuelta en monedas. Se desea encontrar un algoritmo que minimice el número de monedas que se retornan. El problema se puede describir así:
+
+\begin{itemize}
+	\item Tiene un valor numérico entero a devolver $A$
+	\item Tiene un conjunto de monedas $B = \{b_1,b_2,...,b_n\}$
+	\item Se busca encontrar el subconjunto de monedas  $B_s= \{b_i,..,b_j,...,b_n\}$  de tal forma su suma sea igual $A$ y el tamaño de $B_s$ sea el menor posible.
+\end{itemize}
+
+Ejemplo:
+\begin{itemize}
+	\item $A = 50$
+	\item $B = \{10, 10,20,30,10,20\}$
+	\item La solución óptima a este problema es $B_s=\{20,30\}$ ya que es el subconjunto de menor tamaño que suma 50
+\end{itemize}
+
+
+\subsection{Preguntas}
+
+Para cada uno de los problemas anteriores responda:
+
+\begin{enumerate}
+	\item \textbf{(4 puntos)} ¿Cual es la complejidad de la solución ingenua? Justifique.
+	\newpage
+	\item Cocinemos una deliciosa solución dinámica:
+	\begin{enumerate}
+		\item \textbf{(9 puntos) Paso 1:} Caracterice la solución optima. Identifique si el problema se puede solucionar mediante divide y vencerás. Observe si existe solapamiento de problemas y sí una solución optima esta compuesta por soluciones óptimas de los subproblemas.
+		\item \textbf{(7 puntos) Paso 2:} Defina recursivamente el valor de una solución óptima. Identifique la estructura de memorización, que significa cada una de sus posiciones y cómo se calcula cada una. Justifique formalmente.
+		\item \textbf{(7 puntos) Pasos 3 y 4:} Muestre cómo se calcula el valor de la solución optima de forma Bottom-up.
+	\end{enumerate}
+	\item \textbf{(8 puntos)} A partir de la caracterización realizada diseñe una solución voraz al problema. Justifique formalmente.
+\end{enumerate}
+
+\begin{center}
+	\huge{¡Exitos!}
+\end{center}
+
+\end{document}
