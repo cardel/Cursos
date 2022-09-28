@@ -53,8 +53,8 @@ Pruebe
 ******************************************
 ;Booleanos
 
-- Es una expresión numérica, 0 es falsa, cualquier otro caso es falso
-Diseñe la función valor-verdad? que realiza esta verificación
+- true para verdadero
+- false para falso
 |#
 ;;Especificación léxica
 ;; Comentarios comienzan #
