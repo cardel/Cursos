@@ -73,6 +73,19 @@ declare x=2;
         do (y x a) end
 
 Debe retornar 9
+
+Agregar procedimientos recursivos
+
+<expresion> ::= "letrec" ("texto" "(" (texto ",")* = <expresion> ";")* "do" <expresion> "end"
+
+letrec
+      g(a,b) = if >(a,0) then +[b,(g -[a,1] b)] else b
+      do
+         (g 2 3)
+
+      end
+
+Debe retornar 6.
 |#
 ;;Especificación léxica
 ;; Comentarios comienzan #
@@ -104,6 +117,8 @@ Debe retornar 9
     ;;Procedimientos
     (expresion ("proc" "(" (separated-list texto ",") ")" expresion "end") proc-exp)
     (expresion ("(" expresion (arbno expresion) ")") app-exp)
+    ;;Proc recursivos
+    (expresion ("letrec" (arbno texto "(" (separated-list texto ",") ")" "=" expresion) "do" expresion) letrec-exp)
     ;;Primitivas
     (primitiva ("+") sum-prim)
     (primitiva ("-") res-prim)
@@ -137,7 +152,15 @@ Debe retornar 9
   (ambiente-extendido
    (lid (list-of symbol?))
    (lva (list-of value?))
-   (env ambiente?)))
+   (env ambiente?))
+  (ambiente-extendido-recursivo
+   (proc-names (list-of symbol?))
+   (llargs (list-of (list-of symbol?)))
+   (lbodys (list-of expresion?)) ;Cuerpo procs
+   (env ambiente?));Expresion a evaluarambiente-extendido-recursivo
+   )
+  
+ 
 
 ;;Función para buscar dentro un ambiente
 (define apply-env
@@ -155,7 +178,33 @@ Debe retornar 9
                  [(eqv? (car lidd) varr) (car lvall)]
                  [else (buscar-id (cdr lidd) (cdr lvall) varr)])))
             )
-         (buscar-id lid lval var))))))
+         (buscar-id lid lval var)))
+      (ambiente-extendido-recursivo
+       (proc-names llargs bodies env-old)
+       (letrec
+           (
+            (buscar-proc
+             (lambda (proc-names llargs bodies)
+               (cond
+                 [(null? proc-names)
+                  (apply-env env-old var)]
+                 [(eqv?
+                   (car proc-names)
+                   var)
+                  (clausura
+                   (car llargs)
+                   (car bodies)
+                   env) ;Aqui generamos la clausura
+                  ]
+                 [else
+                  (buscar-proc (cdr proc-names)
+                               (cdr llargs)
+                               (cdr bodies))])))
+            )
+         (buscar-proc proc-names llargs bodies)))
+      )
+    )
+  )
 
 (define value?
   (lambda (v) #T))
@@ -236,26 +285,41 @@ Debe retornar 9
                      (lids body env-old)
                      (evaluar-expresion body (ambiente-extendido lids lrands env-old))))
                   (eopl:error "Para evaluar debe enviar un procedimiento"))))
+      ;;Procedimiento recursivo
+      (letrec-exp (proc-names llargs bodies body)
+                  (evaluar-expresion body (ambiente-extendido-recursivo proc-names llargs bodies amb)))
       (else 0))))
 
 ;;Operar
 (define operar
+  (lambda (op first lst acc)
+    (op first (operar-aux op acc lst))))
+ 
+(define operar-aux
   (lambda (op acc lst)
     (cond
       [(null? lst) acc]
       [else
        (op (car lst)
-           (operar op acc (cdr lst)))])))
+           (operaret
+         a = +((f x y), (g x y z))
+         b = let k = proc(a,b) +(a,b) in (k x y)
+         in
+            letrec
+                    h(x,y) = if >(x,0) then +((f a b), (g -(x,1) y)) else y
+                    g(m,n) = if >(m,0) then +(a, (h -(m,1) n)) else n
+                    in
+                         (h 6 a)  op acc (cdr lst)))])))
 
 
 ;;Primitivas
 (define aplicar-primitiva
   (lambda (prim exp lexp)
     (cases primitiva prim
-      (sum-prim () (operar + exp lexp))
-      (res-prim () (operar - exp lexp))
-      (mul-prim () (operar * exp lexp))
-      (div-prim () (operar / exp lexp)))))
+      (sum-prim () (operar + exp lexp 0))
+      (res-prim () (operar - exp lexp 0))
+      (mul-prim () (operar * exp lexp 1))
+      (div-prim () (operar / exp lexp 1)))))
 
 (define aplicar-primitiva-doble
   (lambda (prim exp1 exp2)
@@ -302,7 +366,16 @@ Debe probar
 --> declarar x=2;y=3 haga a fin
 1
 ******************************************
-
+declare
+a = 3;
+b = 4
+do
+letrec
+f(x,y) = if >[x,0] then +[y,(f -[x,1] y)] else y end
+do
+(f 2 3)
+end
+*******************
 
 |#
 
