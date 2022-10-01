@@ -20,7 +20,7 @@ def T(n)
 end
 
 def fml(n)
-  return n**(Math.log(4,3))+3*n*(n**(Math.log(4/3,3)))-3*n+(n**(Math.log(4,3))-1)/3
+  return n**Math.log(4,3)+3*n*n**Math.log(4/3.0,3)-3*n+(n**(Math.log(4,3))-1)/3.0
 end
 
 some_array = [0, 1, 2, 3, 4, 5]
@@ -29,7 +29,7 @@ lista = some_array.comprehend {|x| 3**x}
 
 
 lista.each { |n|
-  puts(T(n))
+  print([n,fml(n),T(n)],"\n")
 }
 
     
