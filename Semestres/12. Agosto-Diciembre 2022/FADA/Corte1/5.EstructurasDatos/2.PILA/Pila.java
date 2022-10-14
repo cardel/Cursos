@@ -17,13 +17,13 @@ public class Pila {
     this.size = n;
   }
 
-  public void Push(int x) throws StackOverflowError{
+  public void Push(int x) throws IndexOutOfBoundsException{
     this.top++;
     if(this.top <= this.size){
       arreglo[top-1]=x;
     }
     else{
-      throw new StackOverflowError();
+      throw new IndexOutOfBoundsException();
     }
   }
 

@@ -1,7 +1,10 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import java.lang.IndexOutOfBoundsException;
 
 public class PilaTest {
+
   @Test
   void pilaCreacion(){
     
@@ -14,7 +17,7 @@ public class PilaTest {
     assertEquals(objPila.arreglo.length,10);
   }
   
-  @Test(expected = StackOverflowError.class)
+  @Test
   void pushTest(){
     Pila objPila = new Pila(5);
     objPila.Push(5);
@@ -29,13 +32,12 @@ public class PilaTest {
   }
 
   @Test
-  @Test(expected = Exception.class)
   void testPop(){
     Pila objPila = new Pila(5);
     objPila.Push(5);
     objPila.Push(10);
-    assertEquals(objPila.pop(),10);   
-    assertEquals(objPila.pop(),5);   
-    objPila.pop();   
+    assertEquals(objPila.Pop(),10);   
+    assertEquals(objPila.Pop(),5);   
+    assertThrows(IndexOutOfBoundsException.class, () -> {objPila.Pop();}, "IndexBoundsException expected");   
   }
 }

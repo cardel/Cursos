@@ -1,0 +1,7 @@
+javac -d out <testfiles>
+javac -d out -cp out:<route>/lib/junit-platform-console-standalone-1.9.1.jar <testfiles>
+
+java -jar <route>/lib/junit-platform-console-standalone-1.9.1.jar --class-path out --scan-class-path
+
+
+
