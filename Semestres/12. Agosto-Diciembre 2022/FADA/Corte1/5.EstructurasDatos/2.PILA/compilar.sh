@@ -5,7 +5,7 @@ if [ ! -f lib/junit-platform-console-standalone-1.9.1.jar ]; then
     wget https://github.com/cardel/repositorios/raw/main/lib/junit-platform-console-standalone-1.9.1.jar 
 	mv junit-platform-console-standalone-1.9.1.jar  lib/
 fi
-
+mkdir -p out
 javac -d out Pila.java Cola.java
 javac -d out -cp out:lib/junit-platform-console-standalone-1.9.1.jar PilaTest.java 
 java -jar lib/junit-platform-console-standalone-1.9.1.jar --class-path out --scan-class-path
