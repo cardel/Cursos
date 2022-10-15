@@ -18,8 +18,8 @@ public class Pila {
   }
 
   public void Push(int x) throws IndexOutOfBoundsException{
-    this.top++;
-    if(this.top <= this.size){
+    if(this.top < this.size){
+      this.top++;
       arreglo[top-1]=x;
     }
     else{
@@ -37,6 +37,4 @@ public class Pila {
       throw new IndexOutOfBoundsException();
     }
   }
-
-
 }

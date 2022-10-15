@@ -28,7 +28,8 @@ public class PilaTest {
     assertEquals(objPila.top,4);
     objPila.Push(12);
     assertEquals(objPila.top,5);
-    
+    assertThrows(IndexOutOfBoundsException.class,() -> {objPila.Push(10);},"Indexbound exception");
+    assertEquals(objPila.top,5);
   }
 
   @Test
