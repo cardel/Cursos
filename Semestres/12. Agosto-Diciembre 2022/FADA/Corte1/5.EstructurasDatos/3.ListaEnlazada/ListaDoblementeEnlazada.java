@@ -50,7 +50,64 @@ import java.lang.IndexOutOfBoundsException;
     
   }
 
-  public void delete(int x){
-    throw new UnsupportedOperationException();
+  public void deleteIndex(int idx) throws IndexOutOfBoundsException{
+    NodoDoble nodoActual = this.head;
+    int cnt = 0;
+    while(idx < this.size && nodoActual != null ){      
+      if(cnt == idx){
+        //El siguient edel anterior es el siguiente del actual
+        if(nodoActual.getPrev()!=null){
+          nodoActual.getPrev().setNext(nodoActual.getNext());
+        }
+        else{
+          nodoActual.getNext().setPrev(null);
+          this.head = nodoActual.getNext();
+        }
+
+        if(nodoActual.getNext()!=null){
+          nodoActual.getNext().setPrev(nodoActual.getPrev());
+        } 
+        else{
+          nodoActual.getPrev().setNext(null);
+        }
+        this.size--;
+        break;
+      }
+      nodoActual = nodoActual.getNext();
+      cnt++;
+    }
+    if(idx > this.size){
+      throw new IndexOutOfBoundsException();  
+    }
   }
+
+  
+  public void deleteValue(int value) throws IndexOutOfBoundsException{
+    NodoDoble nodoActual = this.head;
+    while(nodoActual!=null){
+      if(nodoActual.getKey()==value){
+        if(nodoActual.getPrev()!=null){
+          nodoActual.getPrev().setNext(nodoActual.getNext());
+        }
+        else{
+          nodoActual.getNext().setPrev(null);
+          this.head = nodoActual.getNext();
+        }
+
+        if(nodoActual.getNext()!=null){
+          nodoActual.getNext().setPrev(nodoActual.getPrev());
+        } 
+        else{
+          nodoActual.getPrev().setNext(null);
+        }
+        this.size--;
+        break;
+      }
+      nodoActual = nodoActual.getNext();
+    }
+    if(nodoActual == null){
+      throw new IndexOutOfBoundsException();
+    }
+    
+    }
  }
