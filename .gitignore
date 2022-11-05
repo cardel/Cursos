@@ -383,3 +383,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,java,visualstudiocode,python,c++,ruby,c
+build/
+gradle/
+.gradle/
