@@ -147,18 +147,9 @@ public class bst {
       // Caso 3
       else {
         bst succ = currentNode.successor(currentNode.getValue());
-        currentNode = succ;
-        if (father != null) {
-          if (currentNode == father.getLeft()) {
-            father.setLeft(succ);
-          } else {
-            father.setRight(succ);
-          }
-        }
-
-        currentNode.getLeft().setFather(succ);
-        currentNode.getRight().setFather(succ);
-        //this.delete(succ.getValue()); /// Borro el succ
+        this.delete(succ.getValue());
+        currentNode.setValue(succ.getValue());
+        
       }
     }
 
