@@ -101,4 +101,15 @@ public class Heap {
       this.Heapify(i);
     }
   }
+
+  public void heapSort() throws OperationNotSupportedException{
+    this.buildHeap();
+    while(this.size_heap > 0){
+      this.Heapify(1);
+      int aux = this.arreglo[0];
+      this.arreglo[0] = this.arreglo[this.size_heap-1];
+      this.arreglo[this.size_heap-1] = aux;
+      this.size_heap--;
+    }
+  }
 }

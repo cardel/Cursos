@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
 
 public class HeapTest {
   @Test
@@ -50,5 +51,19 @@ public class HeapTest {
     objHeap2.buildHeap();
 
     assertEquals("[12, 9, 10, 5, 7, 6, 8, 2, 1, 4]", Arrays.toString(objHeap2.getArreglo())); 
+  }
+
+  @Test
+  public void testHeapSort() throws Exception{
+    int arreglo[] = {1,8,6,3,7,9,10,2,4};
+    Heap objHeap = new Heap(
+      arreglo,
+      10,
+      9);
+    objHeap.heapSort();
+
+    assertEquals("[1, 2, 3, 4, 6, 7, 8, 9, 10]", Arrays.toString(objHeap.getArreglo())); 
+
+
   }
 }
