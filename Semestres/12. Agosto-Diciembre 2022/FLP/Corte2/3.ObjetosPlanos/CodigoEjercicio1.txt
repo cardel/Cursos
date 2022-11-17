@@ -1,0 +1,44 @@
+class  c1 extends object
+       field a
+       field b
+       method initialize () 0
+       method  setup (k, l)
+               begin
+               set a=+(k,3);
+               set b=l;
+               8
+               end
+       method m1 (n) send self m2 (+(a,n))
+       method m2 (n) *(n, -(a,b))
+       method m4 (x, y) send self m1 (-(x,y))
+
+class  c2 extends c1
+       field b
+       field c
+       method  setup (k, l)
+               begin
+               set b=k;
+               set c=-(k, l);
+               super setup(+(b,k), -(1,l));
+               send self m3(k)
+               end
+       method m2 (n) super m2(+(n, c))
+       method m3 (n) send self m1(*(n,2))
+       method m4 (n, m) +(m, super m4(n, m))
+
+class  c3 extends c2
+       method m2 (n) super m2(n)
+       method m4 (n,m) *(+(n,m),b)
+
+let  p=proc  (o, r, q)
+             let  r1 = send o setup(r, q)
+                  in let  r2 = send o m4(q, r)
+                          r3 = send o m1(r)
+                          in +(r1, +(r2,r3 ))
+     o1 = new c1()
+     o2 = new c2()
+     o3 = new c3()
+     in let  x= (p o1 5 2)
+             y= (p o2 4 1)
+             z= (p o3 3 0)
+             in send o2 m4(x, +(y,z))       
