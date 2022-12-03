@@ -18,5 +18,14 @@ public class App {
         objLCS.solveLCS("ABCBDAB","BDCABA");
         objLCS.solveLCS("AFCEA","CFEHA");
 
+        Backspack objBck = new Backspack();
+        objBck.algorithm(
+            new int[]{7,5,6,8}, 
+            new int[]{3,2,1,4}, 
+            20);
+        objBck.backpackVoraz(
+                new int[]{7,5,6,8}, 
+                new int[]{3,2,1,4}, 
+                20);
     }
 }
